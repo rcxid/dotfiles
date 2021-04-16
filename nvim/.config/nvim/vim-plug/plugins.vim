@@ -17,6 +17,7 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Theme
 Plug 'w0ng/vim-hybrid'
 
 Plug 'preservim/nerdtree'
