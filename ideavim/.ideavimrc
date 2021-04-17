@@ -1,0 +1,36 @@
+"nap imap vmap nnoremap inoremap vnoremap
+"通过双击j回到浏览模式"
+inoremap jj <Esc>
+" vnoremap jj <Esc>
+inoremap jk <Esc>
+vnoremap jk <Esc>
+
+"block key: 屏蔽上下左右按键
+inoremap <Up> <Nop>
+nnoremap <Up> <Nop>
+
+inoremap <Down> <Nop>
+nnoremap <Down> <Nop>
+
+inoremap <Left> <Nop>
+nnoremap <left> <Nop>
+
+inoremap <Right> <Nop>
+nnoremap <Right> <Nop>
+
+"let mapleader = ","
+"inoremap <leader>w <Esc>:w<cr>
+"nnoremap <leader>w :w<cr>
+"nnoremap <leader>h ^
+"nnoremap <leader>l $
+
+nnoremap <space> viw
+inoremap <C-d> <Esc>ddi
+inoremap <C-u> <Esc>u
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+"com! FormatJSON %!python3 -m json.too
