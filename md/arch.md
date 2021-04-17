@@ -1,0 +1,74 @@
+# Arch使用
+
+## 开发环境
+- gcc
+- rust
+- go
+- python
+- java
+- nodejs
+
+## 桌面环境
+- dwm
+- dmenu
+- st
+  - zsh
+    - powerlevel10k
+- feh
+- i3lock
+- compton
+
+## 软件
+- wmname
+- yay
+- docker
+- typora
+- fcitx5
+- vscode
+- neovim
+- toolbox
+  - idea
+- qq-liunx
+- wechat-uos
+- baidudisk
+- neteasemusic
+- qqmusic
+- mpv
+- vlc
+
+
+##  创建用户目录文件夹 
+
+```shell
+yay -S xdg-user-dirs
+xdg-user-dirs-update
+```
+
+## 开机自动打开数字键盘区
+
+### startx
+
+Install the [numlockx](https://archlinux.org/packages/?name=numlockx) package and add it to the `~/.xinitrc` file before `exec`:
+
+```shell
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+#
+
+numlockx &
+
+exec dwm
+```
+
+## 配置文件集中管理
+
+```shell
+# 安装stow
+yay -S stow
+```
+
+
+
