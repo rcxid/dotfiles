@@ -27,9 +27,14 @@ function get_date_time() {
     date +'%m-%d %H:%M %a'
 }
 
+# 获取电量
+function get_battery() {
+    acpi | awk '{print $4}' | sed 's/,//g'
+}
+
 while [ true ]; do
 	#date +'%Y-%m-%d %H:%M:%S %a'
 	# xsetroot -name "$(date +"%m-%d %H:%M %a")"
-    xsetroot -name " $ICON_WFI $ICON_BA4 100% $ICON_MEM$(get_memory) $ICON_DAT$(get_date_time) "
+    xsetroot -name " $ICON_WFI $ICON_BA4 $(get_battery) $ICON_MEM$(get_memory)$ICON_DAT$(get_date_time) "
 	sleep 1.5
 done
