@@ -27,14 +27,31 @@ function get_date_time() {
     date +'%m-%d %H:%M %a'
 }
 
-# 获取电量
 function get_battery() {
+    battery=$(acpi | awk '{print $4}')
+    n=$(echo $battery | sed 's/%,//g')
+    n2=$(echo $battery | sed 's/,//g')
+    if [ $n -gt 75 ]; then
+        echo "$ICON_BA4 $n2"
+    elif [ $n -gt 50 ]; then
+        echo "$ICON_BA3 $n2"
+    elif [ $n -gt 25 ]; then
+        echo "$ICON_BA2 $n2"
+    elif [ $n -gt 10 ]; then
+        echo "$ICON_BA1 $n2"
+    else
+        echo "$ICON_BA0 $n2"
+    fi
+}
+
+# 获取电量
+function bat() {
     acpi | awk '{print $4}' | sed 's/,//g'
 }
 
 while [ true ]; do
 	#date +'%Y-%m-%d %H:%M:%S %a'
 	# xsetroot -name "$(date +"%m-%d %H:%M %a")"
-    xsetroot -name " $ICON_WFI $ICON_BA4 $(get_battery) $ICON_MEM$(get_memory)$(get_date_time) "
-	sleep 1.5
+    xsetroot -name " $ICON_WFI $(get_battery) $ICON_MEM$(get_memory)$(get_date_time) "
+	sleep 2
 done
