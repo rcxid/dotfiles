@@ -42,7 +42,10 @@ nvim
         ├── init.vim
         └── vim-plug
             └── plugins.vim
-# 生成软链接
+# 生成neovim配置软链接
 stow nvim
+
+# 自动生成全部软链接
+./auto.sh
 ```
 

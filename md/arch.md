@@ -24,6 +24,7 @@
 - docker
 - typora
 - fcitx5
+  - fcitx5-pinyin
 - vscode
 - neovim
 - toolbox
@@ -35,6 +36,7 @@
 - qqmusic
 - mpv
 - vlc
+- trayer
 
 
 ##  创建用户目录文件夹 
