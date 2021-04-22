@@ -30,17 +30,21 @@ function get_date_time() {
 function get_battery() {
     battery=$(acpi | awk '{print $4}')
     n=$(echo $battery | sed 's/%,//g')
-    n2=$(echo $battery | sed 's/,//g')
-    if [ $n -gt 75 ]; then
-        echo "$ICON_BA4 $n2"
-    elif [ $n -gt 50 ]; then
-        echo "$ICON_BA3 $n2"
-    elif [ $n -gt 25 ]; then
-        echo "$ICON_BA2 $n2"
-    elif [ $n -gt 10 ]; then
-        echo "$ICON_BA1 $n2"
+    if [ $n ]; then 
+        n2=$(echo $battery | sed 's/,//g')
+        if [ $n -gt 75 ]; then
+            echo "$ICON_BA4 $n2"
+        elif [ $n -gt 50 ]; then
+            echo "$ICON_BA3 $n2"
+        elif [ $n -gt 25 ]; then
+            echo "$ICON_BA2 $n2"
+        elif [ $n -gt 10 ]; then
+            echo "$ICON_BA1 $n2"
+        else
+            echo "$ICON_BA0 $n2"
+        fi
     else
-        echo "$ICON_BA0 $n2"
+        echo "$ICON_BA4 100%"
     fi
 }
 
