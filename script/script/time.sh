@@ -19,12 +19,12 @@ export ICON_DAT=' '
 
 # 获取内存使用率
 function get_memory() {
-    free | awk 'NR == 2{printf "%i% ", ($2-$7)/$2*100}'
+    printf "%s %s" $ICON_MEM "$(free | awk 'NR == 2{printf "%i%%", ($2-$7)/$2*100}')"
 }
 
 # 获取当期系统时间
 function get_date_time() {
-    date +'%m-%d %H:%M %a'
+    printf "%s %s" $ICON_DAT "$(date +'%m-%d %H:%M %a')"
 }
 
 # 获取网口速率
@@ -66,6 +66,6 @@ function bat() {
 while [ true ]; do
 	#date +'%Y-%m-%d %H:%M:%S %a'
 	# xsetroot -name "$(date +"%m-%d %H:%M %a")"
-    xsetroot -name " $(get_net_speed) $(get_battery) $ICON_MEM$(get_memory)$(get_date_time) "
+    xsetroot -name " $(get_net_speed) $(get_battery) $(get_memory) $(get_date_time) "
 	sleep 2
 done

@@ -18,6 +18,12 @@
 - i3lock
 - compton
 
+## 字体
+
+ttf-windows
+
+nerd-font-complete
+
 ## 软件
 - wmname
 - yay
