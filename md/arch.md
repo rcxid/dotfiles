@@ -1,4 +1,4 @@
-# Arch使用
+# Arch使用笔记
 
 ## 开发环境
 - gcc
@@ -19,10 +19,8 @@
 - compton
 
 ## 字体
-
-ttf-windows
-
-nerd-font-complete
+- ttf-windows
+- nerd-font-complete
 
 ## 软件
 - wmname
@@ -77,6 +75,14 @@ exec dwm
 # 安装stow
 yay -S stow
 ```
+
+## 双显卡方案
+```shell
+# 安装软件
+yay -S nvidia-lts bbswitch optimus-manager-qt
+```
+
+
 
 
 
