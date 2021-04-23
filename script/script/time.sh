@@ -27,28 +27,38 @@ function get_date_time() {
     date +'%m-%d %H:%M %a'
 }
 
+# 获取网口速率
+function get_net_speed() {
+    for NIC in /sys/class/net/e*; do
+        grep -q 'up' "$NIC/operstate" && awk '{
+            printf "%s%s",ENVIRON["ICON_NIC"],($0 >= 1000 ? $0 / 1000 "G" : $0 "M")
+        }' "$NIC/speed"
+    done
+}
+
 function get_battery() {
     battery=$(acpi | awk '{print $4}')
     n=$(echo $battery | sed 's/%,//g')
+    ICON=$ICON_PLG
     if [ $n ]; then 
-        n2=$(echo $battery | sed 's/,//g')
         if [ $n -gt 75 ]; then
-            echo "$ICON_BA4 $n2"
+            ICON=$ICON_BA4
         elif [ $n -gt 50 ]; then
-            echo "$ICON_BA3 $n2"
+            ICON=$ICON_BA3
         elif [ $n -gt 25 ]; then
-            echo "$ICON_BA2 $n2"
+            ICON=$ICON_BA2
         elif [ $n -gt 10 ]; then
-            echo "$ICON_BA1 $n2"
+            ICON=$ICON_BA1
         else
-            echo "$ICON_BA0 $n2"
+            ICON=$ICON_BA0
         fi
+        printf "%s %d%%" $ICON $n
     else
-        echo "$ICON_BA4 100%"
+        printf "%s %d%%" $ICON 100
     fi
 }
 
-# 获取电量
+# 获取电量,过时的方法
 function bat() {
     acpi | awk '{print $4}' | sed 's/,//g'
 }
@@ -56,6 +66,6 @@ function bat() {
 while [ true ]; do
 	#date +'%Y-%m-%d %H:%M:%S %a'
 	# xsetroot -name "$(date +"%m-%d %H:%M %a")"
-    xsetroot -name " $ICON_WFI $(get_battery) $ICON_MEM$(get_memory)$(get_date_time) "
+    xsetroot -name " $(get_net_speed) $(get_battery) $ICON_MEM$(get_memory)$(get_date_time) "
 	sleep 2
 done
