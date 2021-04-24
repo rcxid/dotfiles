@@ -24,7 +24,7 @@ function get_memory() {
 
 # 获取当期系统时间
 function get_date_time() {
-    printf "%s %s" $ICON_DAT "$(date +'%m-%d %H:%M %a')"
+    printf "%s" "$(date +'%m-%d %a %H:%M')"
 }
 
 # 获取网口速率
