@@ -41,6 +41,8 @@
 - mpv
 - vlc
 - trayer
+- fzf
+- lazygit
 
 
 ##  创建用户目录文件夹 
