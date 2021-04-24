@@ -36,36 +36,65 @@ function get_net_speed() {
     done
 }
 
-function get_battery() {
-    battery=$(acpi | awk '{print $4}')
-    n=$(echo $battery | sed 's/%//g' | sed 's/,//g')
-    ICON=$ICON_PLG
-    if [ $n ]; then 
-        if [ $n -gt 75 ]; then
-            ICON=$ICON_BA4
-        elif [ $n -gt 50 ]; then
-            ICON=$ICON_BA3
-        elif [ $n -gt 25 ]; then
-            ICON=$ICON_BA2
-        elif [ $n -gt 10 ]; then
-            ICON=$ICON_BA1
+# function get_battery_status() {
+#     if [ acpi -b | grep -q Charging ]; then
+#         printf "%s " $ICON_PLG
+#     else
+
+#     fi
+# }
+
+function get_battery_status() {
+    info=$(acpi -b | sed 's/,//g' | sed 's/%//g')
+    if [ "$info" ]; then
+        status=$(echo $info | awk '{print $3}')
+        battery=$(echo $info | awk '{print $4}')
+        if [ $status == "Charging" ]; then
+            printf "%s " $ICON_PLG
         else
-            ICON=$ICON_BA0
+            if [ $battery -gt 75 ]; then
+                printf "%s  " $ICON_BA4
+            elif [ $battery -gt 50 ]; then
+                printf "%s  " $ICON_BA3
+            elif [ $battery -gt 25 ]; then
+                printf "%s  " $ICON_BA2
+            elif [ $battery -gt 10 ]; then
+                printf "%s  " $ICON_BA1
+            else
+                printf "%s  " $ICON_BA0
+            fi
         fi
-        printf "%s  %d%%" $ICON $n
+        printf "%i%%" $battery
     else
-        printf "%s %d%%" $ICON_PLG 100
+        printf "%s %i%%" $ICON_PLG 100
     fi
 }
 
-# 获取电量,过时的方法
-function bat() {
-    acpi | awk '{print $4}' | sed 's/,//g'
-}
+# function get_battery() {
+#     battery=$(acpi | awk '{print $4}')
+#     n=$(echo $battery | sed 's/%//g' | sed 's/,//g')
+#     ICON=$ICON_PLG
+#     if [ $n ]; then 
+#         if [ $n -gt 75 ]; then
+#             ICON=$ICON_BA4
+#         elif [ $n -gt 50 ]; then
+#             ICON=$ICON_BA3
+#         elif [ $n -gt 25 ]; then
+#             ICON=$ICON_BA2
+#         elif [ $n -gt 10 ]; then
+#             ICON=$ICON_BA1
+#         else
+#             ICON=$ICON_BA0
+#         fi
+#         printf "%s  %d%%" $ICON $n
+#     else
+#         printf "%s %d%%" $ICON_PLG 100
+#     fi
+# }
 
 while [ true ]; do
 	#date +'%Y-%m-%d %H:%M:%S %a'
 	# xsetroot -name "$(date +"%m-%d %H:%M %a")"
-    xsetroot -name " $(get_net_speed) $(get_battery) $(get_memory) $(get_date_time) "
+    xsetroot -name " $(get_net_speed) $(get_battery_status) $(get_memory) $(get_date_time) "
 	sleep 2
 done
