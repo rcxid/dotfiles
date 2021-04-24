@@ -38,8 +38,8 @@ function get_net_speed() {
 
 function get_battery() {
     battery=$(acpi | awk '{print $4}')
-    n=$(echo $battery | sed 's/%,//g')
-    ICON=$ICON_PLG
+    n=$(echo $battery | sed 's/%//g' | sed 's/,//g')
+    ICON=''
     if [ $n ]; then 
         if [ $n -gt 75 ]; then
             ICON=$ICON_BA4
@@ -52,9 +52,9 @@ function get_battery() {
         else
             ICON=$ICON_BA0
         fi
-        printf "%s %d%%" $ICON $n
+        printf "%s  %d%%" $ICON $n
     else
-        printf "%s %d%%" $ICON 100
+        printf "%s %d%%" $ICON_PLG 100
     fi
 }
 

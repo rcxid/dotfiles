@@ -42,3 +42,6 @@ zinit light skywind3000/z.lua
 # plugin
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
+
+# 
+source "$HOME/.config/zinit/alias.zsh"
