@@ -43,7 +43,7 @@
 - trayer
 - fzf
 - lazygit
-
+- delta diff
 
 ##  创建用户目录文件夹 
 
