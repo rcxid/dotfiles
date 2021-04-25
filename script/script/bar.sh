@@ -1,3 +1,3 @@
 #!/bin/bash
 
-~/script/time.sh &
+~/script/status-bar.sh &
