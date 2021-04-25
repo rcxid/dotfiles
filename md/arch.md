@@ -21,6 +21,21 @@
 ## 字体
 - ttf-windows
 - nerd-font-complete
+- ttf-linux-libertine
+- ttf-inconsolata
+- ttf-joypixels
+- ttf-twemoji-color
+- noto-fonts-emoji
+- ttf-liberation
+- ttf-droid
+
+- wqy-bitmapfont
+- wqy-microhei
+- wqy-microhei-lite
+- wqy-zenhei
+- adobe-source-han-mono-cn-fonts
+- adobe-source-han-sans-cn-fonts
+- adobe-source-han-serif-cn-fonts
 
 ## 软件
 - wmname
