@@ -59,6 +59,7 @@
 - fzf
 - lazygit
 - delta diff
+- screenkey
 
 ##  创建用户目录文件夹 
 
