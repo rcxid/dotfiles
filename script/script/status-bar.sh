@@ -29,6 +29,14 @@ function status_bar() {
         }' "$NIC/speed"
     done
 
+    # volume
+    amixer get Master | awk 'END {
+        ICO = $NF == "[off]" ? ENVIRON["ICON_MTD"] : ENVIRON["ICON_VOL"]
+        match($0, / \[([0-9]+%)\] /, m)
+        VOL = m[1]
+        printf "%s%s ", ICO, VOL
+    }'
+
     # 获取电池信息
     info=$(acpi -b | sed 's/,//g' | sed 's/%//g')
     if [ "$info" ]; then
