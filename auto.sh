@@ -11,3 +11,7 @@ stow -R nvim
 stow -R script
 # wallpaper
 stow -R wallpaper
+# xinit
+stow -R xinit
+# zinit
+stow -R zinit
