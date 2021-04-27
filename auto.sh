@@ -15,3 +15,5 @@ stow -R wallpaper
 stow -R xinit
 # zinit
 stow -R zinit
+# lazygit
+stow -R lazygit
