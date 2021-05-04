@@ -118,7 +118,7 @@ function status_bar {
     # 预留空格
     printf " "
     get_velocity
-    get_net_status
+    # get_net_status
     get_voolume
     get_battery
     get_memory
