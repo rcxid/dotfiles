@@ -17,10 +17,49 @@ export ICON_BA3=' '
 export ICON_BA4=' '
 export ICON_DAT=' '
 
+function get_bytes {
+    # Find active network interface
+    interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
+    line=$(grep $interface /proc/net/dev | awk '{print "rx_bytes="$2, "tx_bytes="$10}')
+    eval $line
+    time=$(date +%s%N)
+}
+
+function trans {
+    if test $1 -gt 1024; then
+        result=$(echo "scale=1; $1/1024" | bc)MB/s
+    else
+        result=${1}KB/s
+    fi
+}
+
+function get_velocity {
+    get_bytes
+    rx_prev=$rx_bytes
+    tx_prev=$tx_bytes
+    time_prev=$time
+
+    get_bytes
+    rx_next=$rx_bytes
+    tx_next=$tx_bytes
+    time_next=$time
+
+    time_diff=$(($time_next - $time_prev))
+    rx=$(echo "1000000000*($rx_next-$rx_prev)/1024/$time_diff" | bc)
+    tx=$(echo "1000000000*($tx_next-$tx_prev)/1024/$time_diff" | bc)
+    trans $rx
+    printf "%s " $result
+    trans $tx
+    printf "%s " $result
+}
+
 function status_bar() {
 
     # 预留空格
     printf " "
+
+    # 获取网速
+    get_velocity
 
     # 获取网口速率
     for NIC in /sys/class/net/e*; do
