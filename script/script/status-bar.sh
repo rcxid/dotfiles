@@ -16,6 +16,8 @@ export ICON_BA2=' '
 export ICON_BA3=' '
 export ICON_BA4=' '
 export ICON_DAT=' '
+export ICON_DOW=''
+export ICON_UP=''
 
 # 获取网络接收数据量
 function get_bytes {
@@ -51,9 +53,9 @@ function get_velocity {
     rx=$(echo "1000000000*($rx_next-$rx_prev)/1024/$time_diff" | bc)
     tx=$(echo "1000000000*($tx_next-$tx_prev)/1024/$time_diff" | bc)
     trans $rx
-    printf "%s " $result
+    printf "$ICON_DOW %s " $result
     trans $tx
-    printf "%s " $result
+    printf "$ICON_UP %s " $result
 }
 
 # 获取网口速率
