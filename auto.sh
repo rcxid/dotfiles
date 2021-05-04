@@ -17,3 +17,5 @@ stow -R xinit
 stow -R zinit
 # lazygit
 stow -R lazygit
+# ssh
+stow -R ssh
