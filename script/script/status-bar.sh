@@ -17,6 +17,7 @@ export ICON_BA3=' '
 export ICON_BA4=' '
 export ICON_DAT=' '
 
+# 获取网络接收数据量
 function get_bytes {
     # Find active network interface
     interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
@@ -25,6 +26,7 @@ function get_bytes {
     time=$(date +%s%N)
 }
 
+# 网速单位转换
 function trans {
     if test $1 -gt 1024; then
         result=$(echo "scale=1; $1/1024" | bc)MB/s
@@ -33,6 +35,7 @@ function trans {
     fi
 }
 
+# 获取网速
 function get_velocity {
     get_bytes
     rx_prev=$rx_bytes
@@ -53,30 +56,27 @@ function get_velocity {
     printf "%s " $result
 }
 
-function status_bar() {
-
-    # 预留空格
-    printf " "
-
-    # 获取网速
-    get_velocity
-
-    # 获取网口速率
+# 获取网口速率
+function get_net_status {
     for NIC in /sys/class/net/e*; do
         grep -q 'up' "$NIC/operstate" && awk '{
             printf "%s%s ",ENVIRON["ICON_NIC"],($0 >= 1000 ? $0 / 1000 "G" : $0 "M")
         }' "$NIC/speed"
     done
+}
 
-    # volume
+# 获取音量
+function get_volume {
     amixer get Master | awk 'END {
         ICO = $NF == "[off]" ? ENVIRON["ICON_MTD"] : ENVIRON["ICON_VOL"]
         match($0, / \[([0-9]+%)\] /, m)
         VOL = m[1]
         printf "%s%s ", ICO, VOL
     }'
+}
 
-    # 获取电池信息
+# 获取电池信息
+function get_battery {
     info=$(acpi -b | sed 's/,//g' | sed 's/%//g')
     if [ "$info" ]; then
         status=$(echo $info | awk '{print $3}')
@@ -100,12 +100,27 @@ function status_bar() {
     else
         printf "%s %i%% " $ICON_PLG 100
     fi
+}
 
-    # 获取内存使用率
+# 获取内存使用率
+function get_memory {
     printf "%s %s " $ICON_MEM "$(free | awk 'NR == 2{printf "%i%%", ($2-$7)/$2*100}')"
+}
 
-    # 获取当期系统时间
+# 获取当期系统时间
+function get_date {
     printf "%s " "$(date +'%m-%d %a %H:%M')"
+}
+
+function status_bar() {
+    # 预留空格
+    printf " "
+    get_velocity
+    get_net_status
+    get_voolume
+    get_battery
+    get_memory
+    get_date
 }
 
 while [ true ]; do
