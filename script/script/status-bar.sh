@@ -16,7 +16,7 @@ export ICON_BA2=' '
 export ICON_BA3=' '
 export ICON_BA4=' '
 export ICON_DAT=' '
-export ICON_DOW=''
+export ICON_DOWN=''
 export ICON_UP=''
 
 # 获取网络接收数据量
@@ -28,7 +28,7 @@ function get_bytes {
     time=$(date +%s%N)
 }
 
-# 网速单位转换
+# 网速单位转换KB -> MB
 function trans {
     if test $1 -gt 1024; then
         result=$(echo "scale=1; $1/1024" | bc)MB/s
@@ -37,7 +37,7 @@ function trans {
     fi
 }
 
-# 获取网速
+# 计算当前实时网速 依赖bc计算器
 function get_velocity {
     get_bytes
     rx_prev=$rx_bytes
@@ -53,7 +53,7 @@ function get_velocity {
     rx=$(echo "1000000000*($rx_next-$rx_prev)/1024/$time_diff" | bc)
     tx=$(echo "1000000000*($tx_next-$tx_prev)/1024/$time_diff" | bc)
     trans $rx
-    printf "$ICON_DOW %s " $result
+    printf "$ICON_DOWN %s " $result
     trans $tx
     printf "$ICON_UP %s " $result
 }
@@ -114,7 +114,7 @@ function get_date {
     printf "%s " "$(date +'%m-%d %a %H:%M')"
 }
 
-function status_bar() {
+function status_bar {
     # 预留空格
     printf " "
     get_velocity
@@ -125,6 +125,7 @@ function status_bar() {
     get_date
 }
 
+# 两秒刷新一次状态栏
 while [ true ]; do
     xsetroot -name "$(status_bar)"
 	sleep 2
