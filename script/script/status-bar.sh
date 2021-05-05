@@ -119,7 +119,7 @@ function status_bar {
     printf " "
     get_velocity
     # get_net_status
-    get_voolume
+    get_volume
     get_battery
     get_memory
     get_date
