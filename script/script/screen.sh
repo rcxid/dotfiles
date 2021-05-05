@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# ~/.config文件夹下有vm文件，设置屏幕分辨率
 if [ -e ~/.config/vm ]; then
     # 虚拟机设置分辨率1600x900 1920x1080
     name900=$(cvt 1600 900 | awk 'NR==2{print $2}')
