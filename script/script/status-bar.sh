@@ -23,9 +23,12 @@ export ICON_UP=''
 function get_bytes {
     # Find active network interface
     interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
-    line=$(grep $interface /proc/net/dev | awk '{print "rx_bytes="$2, "tx_bytes="$10}')
-    eval $line
-    time=$(date +%s%N)
+    if [ $interface ]; then
+        line=$(grep $interface /proc/net/dev | awk '{print "rx_bytes="$2, "tx_bytes="$10}')
+        eval $line
+        time=$(date +%s%N)
+        flag=ok
+    fi
 }
 
 # 网速单位转换KB -> MB
@@ -40,22 +43,24 @@ function trans {
 # 计算当前实时网速 依赖bc计算器
 function get_velocity {
     get_bytes
-    rx_prev=$rx_bytes
-    tx_prev=$tx_bytes
-    time_prev=$time
-
-    get_bytes
-    rx_next=$rx_bytes
-    tx_next=$tx_bytes
-    time_next=$time
-
-    time_diff=$(($time_next - $time_prev))
-    rx=$(echo "1000000000*($rx_next-$rx_prev)/1024/$time_diff" | bc)
-    tx=$(echo "1000000000*($tx_next-$tx_prev)/1024/$time_diff" | bc)
-    trans $rx
-    printf "$ICON_DOWN %s " $result
-    trans $tx
-    printf "$ICON_UP %s " $result
+    if [ $flag ]; then
+        rx_prev=$rx_bytes
+        tx_prev=$tx_bytes
+        time_prev=$time
+        get_bytes
+        if [ $flag ]; then
+            rx_next=$rx_bytes
+            tx_next=$tx_bytes
+            time_next=$time
+            time_diff=$(($time_next - $time_prev))
+            rx=$(echo "1000000000*($rx_next-$rx_prev)/1024/$time_diff" | bc)
+            tx=$(echo "1000000000*($tx_next-$tx_prev)/1024/$time_diff" | bc)
+            trans $rx
+            printf "$ICON_DOWN %s " $result
+            trans $tx
+            printf "$ICON_UP %s " $result
+        fi
+    fi
 }
 
 # 获取网口速率
