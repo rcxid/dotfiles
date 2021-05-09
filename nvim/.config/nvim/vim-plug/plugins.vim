@@ -28,6 +28,8 @@ Plug 'rust-lang/rust.vim'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'voldikss/vim-translator'
+
 " Initialize plugin system
 call plug#end()
 
