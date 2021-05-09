@@ -1,3 +1,8 @@
+" 设置空格为leader建
+" let g:mapleader =
+"\<Space>"
+let g:mapleader = ","
+
 " 插入模式中通过按jj、jk回到浏览模式
 inoremap jj <Esc>
 inoremap jk <Esc>

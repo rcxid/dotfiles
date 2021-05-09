@@ -1,6 +1,3 @@
-" 设置空格为leader建
-let g:mapleader = "\<Space>"
-
 set number                              " 设置行号
 set encoding=utf-8                      " 字符编码
 set fileencoding=utf-8                  " The encoding written to file
