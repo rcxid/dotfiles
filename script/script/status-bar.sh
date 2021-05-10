@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 
 # nerdfont
 export ICON_RCD='辶'
@@ -20,7 +20,7 @@ export ICON_DOWN=''
 export ICON_UP=''
 
 # 获取网络接收数据量
-function get_bytes {
+get_bytes() {
     # Find active network interface
     interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
     if [ $interface ]; then
@@ -32,7 +32,7 @@ function get_bytes {
 }
 
 # 网速单位转换KB -> MB
-function trans {
+trans() {
     if test $1 -gt 1024; then
         result=$(echo "scale=1; $1/1024" | bc)MB/s
     else
@@ -41,7 +41,7 @@ function trans {
 }
 
 # 计算当前实时网速 依赖bc计算器
-function get_velocity {
+get_velocity() {
     get_bytes
     if [ $flag ]; then
         rx_prev=$rx_bytes
@@ -64,7 +64,7 @@ function get_velocity {
 }
 
 # 获取网口速率
-function get_net_status {
+get_net_status() {
     for NIC in /sys/class/net/e*; do
         grep -q 'up' "$NIC/operstate" && awk '{
             printf "%s%s ",ENVIRON["ICON_NIC"],($0 >= 1000 ? $0 / 1000 "G" : $0 "M")
@@ -73,7 +73,7 @@ function get_net_status {
 }
 
 # 获取音量
-function get_volume {
+get_volume() {
     amixer get Master | awk 'END {
         ICO = $NF == "[off]" ? ENVIRON["ICON_MTD"] : ENVIRON["ICON_VOL"]
         match($0, / \[([0-9]+%)\] /, m)
@@ -83,7 +83,7 @@ function get_volume {
 }
 
 # 获取电池信息
-function get_battery {
+get_battery() {
     info=$(acpi -b | sed 's/,//g' | sed 's/%//g')
     if [ "$info" ]; then
         status=$(echo $info | awk '{print $3}')
@@ -110,16 +110,16 @@ function get_battery {
 }
 
 # 获取内存使用率
-function get_memory {
+get_memory() {
     printf "%s %s " $ICON_MEM "$(free | awk 'NR == 2{printf "%i%%", ($2-$7)/$2*100}')"
 }
 
 # 获取当期系统时间
-function get_date {
+get_date() {
     printf "%s " "$(date +'%m-%d %a %H:%M')"
 }
 
-function status_bar {
+status_bar() {
     # 预留空格
     printf " "
     get_velocity
