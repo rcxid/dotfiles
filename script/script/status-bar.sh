@@ -86,9 +86,9 @@ get_volume() {
 get_battery() {
     info=$(acpi -b | sed 's/,//g' | sed 's/%//g')
     if [ "$info" ]; then
-        status=$(echo $info | awk '{print $3}')
+        state=$(echo $info | awk '{print $3}')
         battery=$(echo $info | awk '{print $4}')
-        if [ $status == "Charging" ]; then
+        if [ $state = "Charging" ]; then
             printf "%s " $ICON_PLG
         else
             if [ $battery -gt 75 ]; then
