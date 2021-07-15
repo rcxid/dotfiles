@@ -23,12 +23,16 @@ Plug 'w0ng/vim-hybrid'
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 
+" rust语言支持
 Plug 'rust-lang/rust.vim'
 
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'voldikss/vim-translator'
+
+" 括号匹配
+Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()

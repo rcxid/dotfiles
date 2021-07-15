@@ -6,8 +6,8 @@ set tabstop=4                           " tab键长度
 set shiftwidth=4
 set expandtab                           " tab键空格填充
 syntax on                               " 开启代码高亮
-
-"set hidden                              " Required to keep multiple buffers open multiple buffers
+filetype plugin indent on               " rust推荐开启
+set hidden                              " Required to keep multiple buffers open multiple buffers
 "set nowrap                              " Display long lines as just one line
 "set ruler                               " Show the cursor position all the time
 set pumheight=10                        " Makes popup menu smaller
