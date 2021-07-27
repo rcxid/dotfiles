@@ -9,6 +9,8 @@
 yay -S stow
 # pacman
 sudo pacman -Ss stow
+# apt
+sudo apt install stow
 ```
 
 ## 创建配置文件目录并使用git管理

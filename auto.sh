@@ -1,19 +1,10 @@
-#!/bin/bash
+#!/bin/dash
 
 cd ~/dotfiles
-# git
-stow -R git
-# ideavim
-stow -R ideavim
-# neovim
-stow -R nvim
-# script
-stow -R script
-# wallpaper
-stow -R wallpaper
-# xinit
-stow -R xinit
-# zinit
-stow -R zinit
-# lazygit
-stow -R lazygit
+dir=$(pwd)
+
+for file in $(ls $dir); do
+    if [ -d "$dir/$file" ]; then
+        stow -R "$file"
+    fi
+done
