@@ -1,0 +1,26 @@
+ranger 的可选依赖
+    atool: for previews of archives
+    elinks: for previews of html pages
+    ffmpegthumbnailer: for video previews
+    highlight: for syntax highlighting of code
+    libcaca: for ASCII-art image previews
+    lynx: for previews of html pages
+    mediainfo: for viewing information about media files
+    odt2txt: for OpenDocument texts
+    perl-image-exiftool: for viewing information about media files
+    poppler: for pdf previews
+    python-chardet: in case of encoding detection problems [已安装]
+    sudo: to use the "run as root"-feature [已安装]
+    transmission-cli: for viewing bittorrent information
+    ueberzug: for previews of images
+    w3m: for previews of images and html pages
+
+netctl 的可选依赖
+    dialog: for the menu based wifi assistant
+    dhclient: for DHCP support (or dhcpcd)
+    dhcpcd: for DHCP support (or dhclient) [已安装]
+    wpa_supplicant: for wireless networking support [已安装]
+    ifplugd: for automatic wired connections through netctl-ifplugd
+    ppp: for PPP connections
+    openvswitch: for Open vSwitch connections
+    wireguard-tools: for WireGuard connections
