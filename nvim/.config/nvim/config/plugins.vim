@@ -14,14 +14,18 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'mhinz/vim-startify'
 
+" vim-airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Theme
+" vim Theme
 Plug 'w0ng/vim-hybrid'
 
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+
+" nerdtree图标
+" Plug 'ryanoasis/vim-devicons'
 
 " rust语言支持
 Plug 'rust-lang/rust.vim'
