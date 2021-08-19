@@ -45,3 +45,6 @@ zinit light zdharma/fast-syntax-highlighting
 
 # 
 source "$HOME/.config/zinit/alias.zsh"
+source "$HOME/.cargo/env"
+# export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+# export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
