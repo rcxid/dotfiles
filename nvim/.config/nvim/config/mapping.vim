@@ -65,3 +65,6 @@ nnoremap <space> viw
 "
 "nnoremap <Leader>o o<Esc>^Da
 "nnoremap <Leader>O O<Esc>^Da
+
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-x> :NERDTreeToggle<CR>
