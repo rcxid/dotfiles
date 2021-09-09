@@ -1,9 +1,9 @@
 [user]
-	name = rcxid
-	email = gc6174@gmail.com
+    name = rcxid
+    email = gc6174@gmail.com
 
 [init]
-	defaultBranch = master
+    defaultBranch = master
 
 [core]
     pager = delta

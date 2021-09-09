@@ -1,3 +1,4 @@
 #!/bin/bash
 
-~/script/status-bar.sh &
+# ~/script/status-bar.sh &
+/usr/local/bin/status-bar &
