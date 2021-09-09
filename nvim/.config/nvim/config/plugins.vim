@@ -29,6 +29,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " rust语言支持
 Plug 'rust-lang/rust.vim'
+Plug 'mattn/webapi-vim'
 
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
