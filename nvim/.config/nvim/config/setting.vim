@@ -40,3 +40,5 @@ set pumheight=10                        " Makes popup menu smaller
 
 " You can't stop me
 " cmap w!! w !sudo tee %
+
+let g:rustfmt_autosave = 1              " when save buffer will auto exec :RustFmt

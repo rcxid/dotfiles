@@ -35,6 +35,7 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 "nnoremap <C-j> :bnext<CR>
 nnoremap <TAB> :bnext<CR>
 
+nnoremap <Leader>r :RustRun<CR>
 "" Better nav for omnicomplete
 "inoremap <expr> <c-j> ("\<C-n>")
 "inoremap <expr> <c-k> ("\<C-p>")

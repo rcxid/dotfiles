@@ -33,6 +33,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'mattn/webapi-vim'
 
+" go语言插件
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -40,6 +45,16 @@ Plug 'voldikss/vim-translator'
 
 " 括号匹配
 Plug 'jiangmiao/auto-pairs'
+
+" 替换删除单词周围的字符
+Plug 'tpope/vim-surround'
+
+" 模糊搜索
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" 批量替换
+Plug 'brooth/far.vim'
 
 " Initialize plugin system
 call plug#end()

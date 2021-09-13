@@ -7,3 +7,10 @@
 - :bnext :bprev切换buffer
 
 - C-w[h j k l]切换窗口
+
+## vim-surround
+
+"Hello World"
+
+- cs"' => 'Hello World'
+- ds" => Hello World
