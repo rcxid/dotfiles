@@ -12,6 +12,7 @@ endif
 " call plug#begin('~/.config/nvim/plugged')
 call plug#begin('~/.local/share/nvim/plugged')
 
+" vim首页
 Plug 'mhinz/vim-startify'
 
 " vim-airline
@@ -20,8 +21,9 @@ Plug 'vim-airline/vim-airline-themes'
 
 " vim Theme
 Plug 'w0ng/vim-hybrid'
-
+" 文件树插件
 Plug 'preservim/nerdtree'
+" 文件查找插件
 Plug 'ctrlpvim/ctrlp.vim'
 
 " nerdtree图标
