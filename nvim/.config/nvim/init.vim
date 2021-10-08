@@ -6,7 +6,5 @@ source $HOME/.config/nvim/config/mapping.vim
 source $HOME/.config/nvim/config/plugins.vim
 " vim-airline配置
 source $HOME/.config/nvim/config/themes/airline.vim
-
-" 设置hybird主题
-set background=dark
-colorscheme hybrid
+" 设置vim主题
+source $HOME/.config/nvim/config/themes/gruvbox-material.vim

@@ -6,6 +6,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+let g:plug_url_format='https://hub.fastgit.org/%s.git'
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -19,6 +21,9 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'sainnhe/gruvbox-material'
 " vim Theme
 Plug 'w0ng/vim-hybrid'
 " 文件树插件

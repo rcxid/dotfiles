@@ -1,4 +1,5 @@
 set number                              " 设置行号
+set relativenumber                      " 设置相对行号
 set encoding=utf-8                      " 字符编码
 set fileencoding=utf-8                  " The encoding written to file
 set autoindent                          " 开启自动缩进
