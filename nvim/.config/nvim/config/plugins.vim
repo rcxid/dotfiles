@@ -28,6 +28,18 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'w0ng/vim-hybrid'
 " 文件树插件
 Plug 'preservim/nerdtree'
+
+if has('nvim')
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/defx.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+" Plug 'Shougo/defx.nvim'
+" Plug 'kristijanhusak/defx-icons'
+" Plug 't9md/vim-choosewin'
+
 " 文件查找插件
 Plug 'ctrlpvim/ctrlp.vim'
 
