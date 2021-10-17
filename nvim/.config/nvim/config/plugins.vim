@@ -14,6 +14,25 @@ let g:plug_url_format='https://hub.fastgit.org/%s.git'
 " call plug#begin('~/.config/nvim/plugged')
 call plug#begin('~/.local/share/nvim/plugged')
 
+" lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+
+" For vsnip user.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+" For luasnip user.
+" Plug 'L3MON4D3/LuaSnip'
+" Plug 'saadparwaiz1/cmp_luasnip'
+
+" For ultisnips user.
+" Plug 'SirVer/ultisnips'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+
 " vim首页
 Plug 'mhinz/vim-startify'
 
@@ -23,8 +42,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'sainnhe/gruvbox-material'
 " vim Theme
+Plug 'sainnhe/gruvbox-material'
 Plug 'w0ng/vim-hybrid'
 " 文件树插件
 Plug 'preservim/nerdtree'
@@ -53,10 +72,10 @@ Plug 'mattn/webapi-vim'
 " go语言插件
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'voldikss/vim-translator'
 
