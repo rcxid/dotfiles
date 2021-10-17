@@ -24,13 +24,30 @@ return require('packer').startup({
         use 'sainnhe/gruvbox-material'
         -- vim-airline
         use {
-            "vim-airline/vim-airline",
+            'vim-airline/vim-airline',
             requires = {
-                "vim-airline/vim-airline-themes",
+                'vim-airline/vim-airline-themes',
                 -- 综合图标支持such vim-airline lightline, vim-startify
-                "ryanoasis/vim-devicons"
+                -- 'ryanoasis/vim-devicons'
             }
         }
+        -- 图标支持such vim-airline lightline, vim-startify
+        use 'ryanoasis/vim-devicons'
+        -- ranger
+        use 'kevinhwang91/rnvimr'
+        -- 文件管理插件defx
+        use {
+            'Shougo/defx.nvim',
+            -- run = ':UpdateRemotePlugins',
+            requires = {
+                -- dexf文件管理图标支持
+                'kristijanhusak/defx-icons',
+                -- 窗口选择器,可以让defx使用i打开文件
+                't9md/vim-choosewin' 
+            }
+        }
+        -- rust语言支持
+        use 'rust-lang/rust.vim'
 	end,
 	config = {
 		max_jobs = 16,

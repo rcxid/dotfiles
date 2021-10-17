@@ -14,25 +14,6 @@ let g:plug_url_format='https://hub.fastgit.org/%s.git'
 " call plug#begin('~/.config/nvim/plugged')
 call plug#begin('~/.local/share/nvim/plugged')
 
-" lsp
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
-
-" For vsnip user.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-
-" For luasnip user.
-" Plug 'L3MON4D3/LuaSnip'
-" Plug 'saadparwaiz1/cmp_luasnip'
-
-" For ultisnips user.
-" Plug 'SirVer/ultisnips'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-
-
 " vim首页
 Plug 'mhinz/vim-startify'
 
@@ -40,6 +21,7 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" 图标
 Plug 'ryanoasis/vim-devicons'
 
 " vim Theme
@@ -55,18 +37,15 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-" Plug 'Shougo/defx.nvim'
+
 " Plug 'kristijanhusak/defx-icons'
 " Plug 't9md/vim-choosewin'
 
 " 文件查找插件
 Plug 'ctrlpvim/ctrlp.vim'
 
-" nerdtree图标
-" Plug 'ryanoasis/vim-devicons'
-
 " rust语言支持
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 Plug 'mattn/webapi-vim'
 
 " go语言插件
