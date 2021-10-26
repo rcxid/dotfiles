@@ -29,7 +29,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-l> <C-w>l
 
 " ctrl + t 打开/关闭文件树
-nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
 
 " tab切换到下个buffer
 "nnoremap <C-j> :bnext<CR>

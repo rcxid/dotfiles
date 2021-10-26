@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This file can be loaded by calling `lua require('nvim-packer')` from your init.vim
 
 -- auto install packer
 local fn = vim.fn
@@ -11,6 +11,7 @@ end
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
+
 -- Only if your version of Neovim doesn't have https://github.com/neovim/neovim/pull/12632 merged
 -- vim._update_package_paths()
 
@@ -48,6 +49,16 @@ return require('packer').startup({
         }
         -- rust语言支持
         use 'rust-lang/rust.vim'
+        -- lsp
+        use 'neovim/nvim-lspconfig'
+        use {
+            'hrsh7th/nvim-cmp',
+            requires = {
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-buffer'
+            }
+        }
+
 	end,
 	config = {
 		max_jobs = 16,
