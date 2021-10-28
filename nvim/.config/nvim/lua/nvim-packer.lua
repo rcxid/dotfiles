@@ -47,6 +47,8 @@ return require('packer').startup({
                 't9md/vim-choosewin' 
             }
         }
+        -- markdown
+        use 'iamcco/markdown-preview.nvim'
         -- rust语言支持
         use 'rust-lang/rust.vim'
         -- lsp
