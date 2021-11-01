@@ -49,8 +49,6 @@ return require('packer').startup({
         }
         -- markdown
         use 'iamcco/markdown-preview.nvim'
-        -- rust语言支持
-        use 'rust-lang/rust.vim'
         -- lsp
         use 'neovim/nvim-lspconfig'
         use {
