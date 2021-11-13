@@ -1,0 +1,20 @@
+font:
+  normal:
+    family: DejaVuSansMono Nerd Font
+    style: Regular
+
+  bold:
+    family: DejaVuSansMono Nerd Font
+    style: Bold
+
+  italic:
+    family: DejaVuSansMono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: DejaVuSansMono Nerd Font
+    style: Bold Italic
+
+  size: 16
+
+background_opacity: 1.0
