@@ -49,6 +49,8 @@ return require('packer').startup({
         }
         -- markdown
         use 'iamcco/markdown-preview.nvim'
+        -- 括号自动匹配
+        use 'jiangmiao/auto-pairs'
         -- lsp
         use 'neovim/nvim-lspconfig'
         use {
