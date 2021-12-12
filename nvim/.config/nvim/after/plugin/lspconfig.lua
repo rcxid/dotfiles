@@ -12,3 +12,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.pyright.setup{}
