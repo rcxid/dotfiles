@@ -55,7 +55,32 @@ return require('packer').startup({
             'hrsh7th/nvim-cmp',
             requires = {
                 'hrsh7th/cmp-nvim-lsp',
-                'hrsh7th/cmp-buffer'
+                'hrsh7th/cmp-buffer',
+                --nvim-cmp source for neovim Lua API.
+                'hrsh7th/cmp-nvim-lua',
+                --自动提示硬盘上的文件
+                'hrsh7th/cmp-path',
+                --输入数学算式（如1+1=）自动计算
+                'hrsh7th/cmp-calc',
+                --输入: 可以显示表情
+                'hrsh7th/cmp-emoji',
+                --美化自动完成提示信息
+                'onsails/lspkind-nvim',
+                --用于完成英语单词
+                'octaltree/cmp-look',
+                --nvim-cmp 的拼写源基于 vim 的拼写建议
+                'f3fora/cmp-spell'
+            }
+        }
+
+        -- 代码段提示
+        use {
+            'L3MON4D3/LuaSnip',
+            requires = {
+                -- Snippets source for nvim-cmp
+                "saadparwaiz1/cmp_luasnip", 
+                --代码段合集
+                "rafamadriz/friendly-snippets" 
             }
         }
 
