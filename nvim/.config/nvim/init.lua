@@ -1,9 +1,9 @@
 #!/bin/lua
 
--- 引入设置文件
+-- 引入设置配置
 require('setting')
--- 引入按键映射配置文件
-require('mapping')
+-- 引入按键映射配置
+require('keymap')
 -- packer插件
 require('nvim-packer')
 -- vim-airline

@@ -16,7 +16,7 @@ vim.cmd [[packadd packer.nvim]]
 -- vim._update_package_paths()
 
 return require('packer').startup({
-	function()
+    function()
         -- Packer can manage itself
 		use 'wbthomason/packer.nvim'
         -- vim startify
