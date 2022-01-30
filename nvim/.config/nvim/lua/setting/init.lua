@@ -1,7 +1,5 @@
 #!/bin/lua
 
--- print(vim.fn.stdpath('config'))
-
 local function set_options(options)
     for key, value in pairs(options) do
         vim.o[key] = value

@@ -4,8 +4,8 @@
 require('setting')
 -- 引入按键映射配置
 require('keymap')
--- packer插件
-require('nvim-packer')
+-- 引入插件配置
+require('plugins')
 -- vim-airline
 
 vim.cmd('source ~/.config/nvim/themes/airline.vim')
