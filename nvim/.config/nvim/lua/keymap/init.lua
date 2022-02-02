@@ -13,26 +13,15 @@ local configs = {
     map_cmd('n,i,v|<Right>|<Nop>'),
     map_cmd('n,i|<C-s>|<Esc>:w<CR>'),
     map_cmd('n,i|<C-q>|<Esc>:wq<CR>'),
+    map_cmd('n|<space>|viw'),
+    map_cmd('n|<tab>|:bNext<CR>'),
 }
 
 -- 加载按键映射配置
-for _, config in pairs(configs) do
-    bind.load_mapping_config(config)
-end
-
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
-
-
--- nnoremap <space> viw
-keymap('n', '<space>', 'viw', opts)
-keymap('n', '<tab>', ':bNext<CR>', opts)
-
+bind.load_mapping_configs(configs)
 
 -- 窗口切换
 -- nnoremap <C-h> <C-w>h
 -- nnoremap <C-j> <C-w>j
 -- nnoremap <C-k> <C-w>k
 -- nnoremap <C-l> <C-w>l
-
-

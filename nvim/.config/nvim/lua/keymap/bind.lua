@@ -85,15 +85,17 @@ function bind.map_cmd(cmd)
 end
 
 -- 加载按键映射配置
-function bind.load_mapping_config(config)
-    if type(config) == 'table' then
-        local modes = split(config.modes, ',')
-        local keymap = config.keymap
-        local command = config.command
-        local options = config.options
-        for _, mode in pairs(modes) do
-            -- print(mode, keymap, command, options)
-            vim.api.nvim_set_keymap(mode, keymap, command, options)
+function bind.load_mapping_configs(configs)
+    for _, config in pairs(configs) do
+        if type(config) == 'table' then
+            local modes = split(config.modes, ',')
+            local keymap = config.keymap
+            local command = config.command
+            local options = config.options
+            for _, mode in pairs(modes) do
+                -- print(mode, keymap, command, options)
+                vim.api.nvim_set_keymap(mode, keymap, command, options)
+            end
         end
     end
 end

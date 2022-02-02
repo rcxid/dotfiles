@@ -1,27 +1,6 @@
 " 设置leader按键
 let g:mapleader = ","
 
-" 插入模式中通过按jj、jk回到浏览模式
-inoremap jj <Esc>
-inoremap jk <Esc>
-
-" block key: 三种模式中屏蔽上下左右按键
-inoremap <Up> <Nop>
-nnoremap <Up> <Nop>
-vnoremap <Up> <Nop>
-inoremap <Down> <Nop>
-nnoremap <Down> <Nop>
-vnoremap <Down> <Nop>
-inoremap <Left> <Nop>
-nnoremap <left> <Nop>
-vnoremap <left> <Nop>
-inoremap <Right> <Nop>
-nnoremap <Right> <Nop>
-vnoremap <Right> <Nop>
-
-" 空格键选中单词
-nnoremap <space> viw
-
 " 窗口切换
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -33,7 +12,6 @@ nnoremap <C-l> <C-w>l
 
 " tab切换到下个buffer
 "nnoremap <C-j> :bnext<CR>
-nnoremap <TAB> :bnext<CR>
 
 nnoremap <Leader>r :RustRun<CR>
 "" Better nav for omnicomplete

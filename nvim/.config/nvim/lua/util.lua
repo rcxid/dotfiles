@@ -15,5 +15,11 @@ function module.split(str, char)
     return result
 end
 
+-- 加载模块
+function module.load_module(modules)
+    for _, module in pairs(modules) do
+        require(module)
+    end
+end
 
 return module
