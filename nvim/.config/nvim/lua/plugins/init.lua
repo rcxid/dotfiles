@@ -1,14 +1,16 @@
 #!/bin/lua
 
-local prefix = 'plugins.'
-local plugins = {
-    'packer', 
-    'lspconfig', 
-    'nvim-cmp', 
-    'snippets',
-    -- 'rust-analyzer',
+local module = require('core.util.module')
+
+local modules = {
+    'plugins.packer', 
+    'plugins.lspconfig', 
+    'plugins.nvim-cmp', 
+    'plugins.snippets',
+    'plugins.rnvimr',
+    'plugins.vim-choosewin',
+    'plugins.defx'
+    -- 'plugins.rust-analyzer',
 }
 
-for _, plugin in pairs(plugins) do
-    require(prefix..plugin)
-end
+module.load_modules(modules)

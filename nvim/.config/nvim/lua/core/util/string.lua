@@ -1,9 +1,11 @@
 #!/bin/lua
 
--- 封装一些通用方法
+-- string工具类方法
 local module = {}
 
 -- 自定义split函数，切分字符串
+-- str: 要切分的字符串
+-- char: 按照那个字符切分
 function module.split(str, char)
     local index = 1
     local result = {}
@@ -13,13 +15,6 @@ function module.split(str, char)
         index = index + 1
     end
     return result
-end
-
--- 加载模块
-function module.load_module(modules)
-    for _, module in pairs(modules) do
-        require(module)
-    end
 end
 
 return module
