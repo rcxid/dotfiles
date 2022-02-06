@@ -6,6 +6,6 @@ require('config')
 require('plugins')
 
 -- vim-airline
-vim.cmd('source ~/.config/nvim/themes/airline.vim')
+-- vim.cmd('source ~/.config/nvim/themes/airline.vim')
 -- 设置vim主题
 vim.cmd('source ~/.config/nvim/themes/gruvbox-material.vim')

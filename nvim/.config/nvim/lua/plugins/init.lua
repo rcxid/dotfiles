@@ -9,7 +9,8 @@ local modules = {
     'plugins.snippets',
     'plugins.rnvimr',
     'plugins.vim-choosewin',
-    'plugins.defx-icons'
+    'plugins.defx-icons',
+    'plugins.lualine',
     -- 'plugins.rust-analyzer',
 }
 

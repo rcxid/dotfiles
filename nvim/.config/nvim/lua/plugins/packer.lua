@@ -20,13 +20,17 @@ local function plugins()
     -- vim theme
     use 'sainnhe/gruvbox-material'
     -- vim-airline
+    -- use {
+    --     'vim-airline/vim-airline',
+    --     requires = {
+    --         'vim-airline/vim-airline-themes',
+    --         -- 综合图标支持such vim-airline lightline, vim-startify
+    --         -- 'ryanoasis/vim-devicons'
+    --     }
+    -- }
     use {
-        'vim-airline/vim-airline',
-        requires = {
-            'vim-airline/vim-airline-themes',
-            -- 综合图标支持such vim-airline lightline, vim-startify
-            -- 'ryanoasis/vim-devicons'
-        }
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     -- 图标支持such vim-airline lightline, vim-startify
     use 'ryanoasis/vim-devicons'
