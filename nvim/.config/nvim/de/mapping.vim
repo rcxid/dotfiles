@@ -1,12 +1,3 @@
-" 设置leader按键
-let g:mapleader = ","
-
-" 窗口切换
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 " ctrl + t 打开/关闭文件树
 " nnoremap <C-t> :NERDTreeToggle<CR>
 
