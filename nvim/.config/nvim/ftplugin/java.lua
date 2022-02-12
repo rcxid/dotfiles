@@ -1,29 +1,29 @@
 #!/bin/lua
 
--- maven设置文件位置
-local maven_settings = '/opt/maven/conf/settings.xml'
+local maven_setting = '/opt/maven/conf/settings.xml'
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local workspace_dir = '/home/vision/code/java/jdtls-workspace/' .. project_name
+-- local jar_path = vim.fn.system({'locate', 'org.eclipse.equinox.launcher_'})
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
   -- The command that starts the language server
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = {
-    'java',
+    '/usr/lib/jvm/java-11-openjdk/bin/java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
     '-Xms128m',
-    '-Xmx2g',
+    '-Xmx1024m',
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
     '-jar', '/usr/share/java/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
     '-configuration', '/usr/share/java/jdtls/config_linux',
-    -- 💀
-    -- See `data directory configuration` section in the README
-    '-data', '/path/to/unique/per/project/workspace/folder'
+    '-data', workspace_dir,
   },
 
   -- 💀
@@ -36,7 +36,7 @@ local config = {
   -- for a list of options
   settings = {
     java = {
-      home = "/usr/lib/jvm/default-runtim",
+      home = "/usr/lib/jvm/java-11-openjdk",
       eclipse = {
         downloadSources = true,
       },
@@ -49,12 +49,12 @@ local config = {
       },
       configuration = {
         maven = {
-          userSettings = maven_settings,
-          globalSettings = maven_settings,
+          userSettings = maven_setting,
+          globalSettings = maven_setting,
         },
         runtimes = {
           {
-            name = "JavaSE-8",
+            name = "JavaSE-1.8",
             path = "/usr/lib/jvm/java-8-openjdk",
           },
           {
@@ -77,6 +77,26 @@ local config = {
   --   bundles = {}
   -- },
 }
+
+-- This bundles definition is the same as in the previous section (java-debug installation)
+local bundles = {
+  vim.fn.glob("/home/vision/code/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"),
+}
+
+-- This is the new part
+vim.list_extend(bundles, vim.split(vim.fn.glob("/home/vision/code/java/vscode-java-test/server/*.jar"), "\n"))
+config['init_options'] = {
+  bundles = bundles;
+}
+
+config['on_attach'] = function(client, bufnr)
+  -- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
+  -- you make during a debug session immediately.
+  -- Remove the option if you do not want that.
+  require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+end
+
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
 require('jdtls').start_or_attach(config)
+
