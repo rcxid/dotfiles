@@ -21,16 +21,16 @@ local function plugins()
   use 'sainnhe/gruvbox-material'
   -- vim-airline
   -- use {
-  --     'vim-airline/vim-airline',
-  --     requires = {
-  --         'vim-airline/vim-airline-themes',
-  --         -- 综合图标支持such vim-airline lightline, vim-startify
-  --         -- 'ryanoasis/vim-devicons'
-  --     }
+  --   'vim-airline/vim-airline',
+  --   requires = {
+  --     'vim-airline/vim-airline-themes',
+  --     -- 综合图标支持such vim-airline lightline, vim-startify
+  --     -- 'ryanoasis/vim-devicons'
+  --   }
   -- }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = {'kyazdani42/nvim-web-devicons', opt = true }
   }
   -- 图标支持such vim-airline lightline, vim-startify
   use 'ryanoasis/vim-devicons'
@@ -48,7 +48,7 @@ local function plugins()
     }
   }
   -- markdown
-  use 'iamcco/markdown-preview.nvim'
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
   -- 括号自动匹配
   use 'jiangmiao/auto-pairs'
   -- lsp
@@ -76,9 +76,14 @@ local function plugins()
   }
   -- java
   use 'mfussenegger/nvim-jdtls'
+  -- java debug
   use 'mfussenegger/nvim-dap'
-  use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
+  use {
+    "rcarriga/nvim-dap-ui", 
+    requires = {
+      "mfussenegger/nvim-dap"
+    }
+  }
   -- 代码段提示
   use {
     'L3MON4D3/LuaSnip',
@@ -89,7 +94,7 @@ local function plugins()
       "rafamadriz/friendly-snippets"
     }
   }
-
+  -- rust
   use 'rust-lang/rust.vim'
 end
 

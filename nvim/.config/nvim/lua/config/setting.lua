@@ -23,7 +23,7 @@ local options = {
 }
 
 local variables = {
-    {'mapleader', ','},
+    {'mapleader', ' '},
     {'python3_host_prog', '/usr/bin/python3'},
     -- when save buffer will auto exec :RustFmt
     {'rustfmt_autosave', 1},

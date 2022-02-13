@@ -11,7 +11,7 @@ local options = {
 local mappings = {
     { 'i',      'jj',       '<Esc>',        options },
     { 'i',      'jk',       '<Esc>',        options },
-    { 'n',      '<space>',  'viw',          options },
+    -- { 'n',      '<space>',  'viw',          options },
     { 'n',      '<tab>',    ':bNext<CR>',   options },
     { 'n',      '<C-h>',    '<C-w>h',       options },
     { 'n',      '<C-j>',    '<C-w>j',       options },
