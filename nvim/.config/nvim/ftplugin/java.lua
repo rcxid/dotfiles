@@ -109,6 +109,7 @@ local options = {
 -- java项目按键映射配置
 local mappings = {
   { 'n',  '<leader>f',    "<Cmd>lua vim.lsp.buf.formatting()<CR>",                      options },
+  { 'n',  '<leader>i',    "<Cmd>lua vim.lsp.buf.code_action()<CR>",                     options },
   { 'n',  '<leader>o',    "<Cmd>lua require('jdtls').organize_imports()<CR>",           options },
   { 'n',  '<leader>c',    "<Cmd>lua require('jdtls').extract_constant()<CR>",           options },
   { 'v',  '<leader>c',    "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",  options },
