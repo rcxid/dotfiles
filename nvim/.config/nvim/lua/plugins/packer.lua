@@ -96,6 +96,8 @@ local function plugins()
   }
   -- rust
   use 'rust-lang/rust.vim'
+
+  use 'voldikss/vim-floaterm'
 end
 
 -- packer.vim配置

@@ -11,6 +11,7 @@ local modules = {
     'plugins.vim-choosewin',
     'plugins.defx-icons',
     'plugins.lualine',
+    'plugins.vim-floaterm',
     -- 'plugins.rust-analyzer',
 }
 
