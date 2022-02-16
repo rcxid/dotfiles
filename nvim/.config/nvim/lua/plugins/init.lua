@@ -12,6 +12,7 @@ local modules = {
     'plugins.lualine',
     'plugins.vim-floaterm',
     'plugins.nvim-tree',
+    'plugins.rust',
     -- 'plugins.rust-analyzer',
 }
 
