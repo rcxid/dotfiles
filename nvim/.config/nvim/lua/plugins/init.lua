@@ -12,6 +12,7 @@ local modules = {
     'plugins.defx-icons',
     'plugins.lualine',
     'plugins.vim-floaterm',
+    'plugins.nvim-tree',
     -- 'plugins.rust-analyzer',
 }
 
