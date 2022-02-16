@@ -9,7 +9,6 @@ local modules = {
     'plugins.snippets',
     'plugins.rnvimr',
     'plugins.vim-choosewin',
-    'plugins.defx-icons',
     'plugins.lualine',
     'plugins.vim-floaterm',
     'plugins.nvim-tree',

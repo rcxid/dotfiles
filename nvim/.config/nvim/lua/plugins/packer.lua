@@ -36,17 +36,6 @@ local function plugins()
   use 'ryanoasis/vim-devicons'
   -- ranger
   use 'kevinhwang91/rnvimr'
-  -- 文件管理插件defx
-  use {
-    'Shougo/defx.nvim',
-    -- run = ':UpdateRemotePlugins',
-    requires = {
-      -- dexf文件管理图标支持
-      'kristijanhusak/defx-icons',
-      -- 窗口选择器,可以让defx使用i打开文件
-      't9md/vim-choosewin' 
-    }
-  }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
