@@ -2,8 +2,10 @@
 
 local module = require('core.util.module')
 
+local prefix = 'themes'
+
 local modules = {
-  'themes.gruvbox-material',
+  'gruvbox-material',
 }
 
-module.load_modules(modules)
+module.load_modules(modules, prefix)

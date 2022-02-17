@@ -2,19 +2,20 @@
 
 local module = require('core.util.module')
 
+local prefix = 'plugins'
+
 local modules = {
-    'plugins.packer', 
-    'plugins.lspconfig', 
-    'plugins.nvim-cmp', 
-    'plugins.snippets',
-    'plugins.rnvimr',
-    'plugins.vim-choosewin',
-    -- 'plugins.lualine',
-    'plugins.vim-airline',
-    'plugins.vim-floaterm',
-    'plugins.nvim-tree',
-    'plugins.rust',
-    -- 'plugins.rust-analyzer',
+  'packer', 
+  'lspconfig', 
+  'nvim-cmp', 
+  'snippets',
+  'rnvimr',
+  'vim-choosewin',
+  'vim-airline',
+  'vim-floaterm',
+  'nvim-tree',
+  'rust',
+  'lsp',
 }
 
-module.load_modules(modules)
+module.load_modules(modules, prefix)

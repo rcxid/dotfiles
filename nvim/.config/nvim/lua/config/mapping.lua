@@ -13,6 +13,8 @@ local mappings = {
     { 'i',      'jk',       '<Esc>',        options },
     -- { 'n',      '<space>',  'viw',          options },
     { 'n',      '<tab>',    ':bNext<CR>',   options },
+    { 'i',      '<C-u>',    '<Esc>viwUi',   options },
+    { 'n',      '<C-u>',    'viwU<Esc>',    options },
     { 'n',      '<C-h>',    '<C-w>h',       options },
     { 'n',      '<C-j>',    '<C-w>j',       options },
     { 'n',      '<C-k>',    '<C-w>k',       options },

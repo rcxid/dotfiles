@@ -70,3 +70,7 @@ require('nvim-tree').setup {
     }
   }
 }
+
+require('core.keymap').load_mapping_configs({
+  { 'n,i', '<C-n>', '<Esc>:NvimTreeToggle<CR>' },
+})

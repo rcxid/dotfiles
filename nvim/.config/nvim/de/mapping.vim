@@ -1,17 +1,6 @@
-" ctrl + t 打开/关闭文件树
-" nnoremap <C-t> :NERDTreeToggle<CR>
-
-" tab切换到下个buffer
-"nnoremap <C-j> :bnext<CR>
-
-nnoremap <Leader>r :RustRun<CR>
 "" Better nav for omnicomplete
 "inoremap <expr> <c-j> ("\<C-n>")
 "inoremap <expr> <c-k> ("\<C-p>")
-"
-"" Easy CAPS
-"inoremap <c-u> <ESC>viwUi
-"nnoremap <c-u> viwU<Esc>
 "
 "" SHIFT-TAB will go back
 "nnoremap <S-TAB> :bprevious<CR>
