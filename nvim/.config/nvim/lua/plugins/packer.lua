@@ -94,6 +94,9 @@ local function plugins()
   use 'rust-lang/rust.vim'
 
   use 'voldikss/vim-floaterm'
+
+  -- tagbar
+  use 'preservim/tagbar'
 end
 
 -- packer.vim配置

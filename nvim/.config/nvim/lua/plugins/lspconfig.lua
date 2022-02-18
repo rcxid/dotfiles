@@ -13,12 +13,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
   }
 )
-
-local servers = {
-    'pyright',
-    -- 'rust_analyzer',
-}
-
-for _, server in pairs(servers) do
-    lsp[server].setup{}
-end
