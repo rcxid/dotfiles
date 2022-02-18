@@ -15,7 +15,6 @@ local modules = {
   'vim-floaterm',
   'nvim-tree',
   'rust',
-  'lsp',
 }
 
 module.load_modules(modules, prefix)

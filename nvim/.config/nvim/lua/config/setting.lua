@@ -29,6 +29,11 @@ local variables = {
     {'rustfmt_autosave', 1},
 }
 
+vim.cmd([[
+syntax enable
+filetype plugin indent on
+]])
+
 -- nvim选项配置
 setting.set_options(options)
 -- nvim变量设置
