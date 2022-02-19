@@ -17,6 +17,7 @@ local modules = {
   'rust',
   'python',
   'golang',
+  'lua-language-server',
   'tagbar',
 }
 
