@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # 运行输入法
-~/script/fcitx5.sh
+~/script/boot/fcitx5.sh
 # 设置屏幕分辨率
 # ~/script/screen.sh
 # 壁纸设置
-~/script/picture.sh
+~/script/boot/picture.sh
 # 窗口通明
-~/script/picom.sh
+~/script/boot/picom.sh
 # dwm bar
-~/script/bar.sh
+~/script/boot/bar.sh
 # 自动锁定小键盘区
 # ~/script/numlockx
 # 启动桌面
