@@ -17,6 +17,7 @@ local modules = {
   'rust',
   'python',
   'golang',
+  'groovy',
   'lua-language-server',
   'tagbar',
 }
