@@ -17,9 +17,10 @@ local modules = {
   'rust',
   'python',
   'golang',
-  'groovy',
+  -- 'groovy',
   'lua-language-server',
   'tagbar',
+  'telescope',
 }
 
 module.load_modules(modules, prefix)

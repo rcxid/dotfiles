@@ -97,6 +97,12 @@ local function plugins()
 
   -- tagbar
   use 'preservim/tagbar'
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {'nvim-telescope/telescope-ui-select.nvim' }
 end
 
 -- packer.vim配置
