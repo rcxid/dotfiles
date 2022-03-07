@@ -90,9 +90,8 @@ local function plugins()
       'rafamadriz/friendly-snippets'
     }
   }
-  -- rust
-  use 'rust-lang/rust.vim'
 
+  -- rust
   use {
     'simrat39/rust-tools.nvim',
     requires = {
