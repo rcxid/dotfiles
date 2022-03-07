@@ -75,9 +75,9 @@ local function plugins()
   -- java debug
   use 'mfussenegger/nvim-dap'
   use {
-    "rcarriga/nvim-dap-ui", 
+    'rcarriga/nvim-dap-ui', 
     requires = {
-      "mfussenegger/nvim-dap"
+      'mfussenegger/nvim-dap'
     }
   }
   -- 代码段提示
@@ -85,13 +85,21 @@ local function plugins()
     'L3MON4D3/LuaSnip',
     requires = {
       -- Snippets source for nvim-cmp
-      "saadparwaiz1/cmp_luasnip",
+      'saadparwaiz1/cmp_luasnip',
       --代码段合集
-      "rafamadriz/friendly-snippets"
+      'rafamadriz/friendly-snippets'
     }
   }
   -- rust
   use 'rust-lang/rust.vim'
+
+  use {
+    'simrat39/rust-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'mfussenegger/nvim-dap'
+    }
+  }
 
   use 'voldikss/vim-floaterm'
 

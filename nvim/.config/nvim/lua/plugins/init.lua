@@ -14,7 +14,7 @@ local modules = {
   'vim-airline',
   'vim-floaterm',
   'nvim-tree',
-  'rust',
+  'rust-tools',
   'python',
   'golang',
   -- 'groovy',
