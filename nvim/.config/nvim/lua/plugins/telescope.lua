@@ -32,3 +32,19 @@ require("telescope").setup {
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 require("telescope").load_extension("ui-select")
+
+local options = {
+  noremap = true,
+  silent = true,
+}
+
+-- 按键映射配置
+local mappings = {
+  { 'n',  '<leader>ff',    "<cmd>Telescope find_files<cr>" },
+  { 'n',  '<leader>fg',    "<cmd>Telescope live_grep<cr>"  },
+  { 'n',  '<leader>fb',    "<cmd>Telescope buffers<cr>"    },
+  { 'n',  '<leader>fh',    "<cmd>Telescope help_tags<cr>"  },
+}
+
+-- 加载按键映射配置
+require('core.keymap').load_mapping_configs(mappings)

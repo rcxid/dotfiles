@@ -6,3 +6,8 @@
 - groovy: groovy-language-server
 - python: pyright
 - golang: gopls
+
+## 插件说明
+- telescope.nvim
+  - ripgrep
+  - fd

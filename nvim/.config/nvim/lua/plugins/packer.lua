@@ -75,7 +75,7 @@ local function plugins()
   -- java debug
   use 'mfussenegger/nvim-dap'
   use {
-    'rcarriga/nvim-dap-ui', 
+    'rcarriga/nvim-dap-ui',
     requires = {
       'mfussenegger/nvim-dap'
     }
@@ -110,6 +110,8 @@ local function plugins()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {'nvim-telescope/telescope-ui-select.nvim' }
+  -- :TSUpdate
+  use {'nvim-treesitter/nvim-treesitter' }
 
   use 'airblade/vim-gitgutter'
 end
