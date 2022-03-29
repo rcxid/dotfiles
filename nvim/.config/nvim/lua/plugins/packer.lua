@@ -114,6 +114,8 @@ local function plugins()
   use {'nvim-treesitter/nvim-treesitter' }
 
   use 'airblade/vim-gitgutter'
+
+  use 'thinca/vim-quickrun'
 end
 
 -- packer.vim配置
