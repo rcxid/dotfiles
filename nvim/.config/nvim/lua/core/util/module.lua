@@ -5,12 +5,12 @@ local mod = {}
 -- 处理模块: 给模块添加前缀
 -- prefix: 'config'
 -- modules: { 'module', ... }
-function handle(prefix, modules)
-   local handle_modules = {}
-   for index, module in ipairs(modules) do
-     handle_modules[index] = prefix .. '.' .. module
-   end
-   return handle_modules
+local function handle(prefix, modules)
+  local handle_modules = {}
+  for index, module in ipairs(modules) do
+    handle_modules[index] = prefix .. '.' .. module
+  end
+  return handle_modules
 end
 
 -- 加载模块
@@ -26,6 +26,11 @@ function mod.load_modules(modules, prefix)
       error("Error loading " .. module .. "\n\n" .. err)
     end
   end
+end
+
+-- setup function
+function mod.setup(modules, prefix)
+  return mod.load_modules(modules, prefix)
 end
 
 return mod

@@ -1,15 +1,10 @@
 #!/bin/lua
 
-local module = require('core.util.module')
-
-local modules = {
+require('core.util.module').setup {
   -- nvim基本配置
-  'config', 
+  'config',
   -- nvim插件配置
-  'plugins', 
+  'plugins',
   -- nvim主题配置
-  'themes', 
+  'themes',
 }
-
--- 加载模块
-module.load_modules(modules)
