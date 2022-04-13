@@ -19,19 +19,27 @@ local function plugins()
   use 'mhinz/vim-startify'
   -- vim theme
   use 'sainnhe/gruvbox-material'
+  use 'navarasu/onedark.nvim'
   -- vim-airline
-  use {
-    'vim-airline/vim-airline',
-    requires = {
-      'vim-airline/vim-airline-themes',
-      -- 综合图标支持such vim-airline lightline, vim-startify
-      -- 'ryanoasis/vim-devicons'
-    }
-  }
   -- use {
-  --   'nvim-lualine/lualine.nvim',
-  --   requires = {'kyazdani42/nvim-web-devicons', opt = true }
+  --   'vim-airline/vim-airline',
+  --   requires = {
+  --     'vim-airline/vim-airline-themes',
+  --     -- 综合图标支持such vim-airline lightline, vim-startify
+  --     -- 'ryanoasis/vim-devicons'
+  --   }
   -- }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use 'SmiteshP/nvim-gps' -- statusline show class structure
+  -- using packer.nvim
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "*",
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
   -- 图标支持such vim-airline lightline, vim-startify
   use 'ryanoasis/vim-devicons'
   -- ranger

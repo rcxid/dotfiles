@@ -1,34 +1,9 @@
-" auto-install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-let g:plug_url_format='https://hub.fastgit.org/%s.git'
-
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-" call plug#begin('~/.config/nvim/plugged')
-call plug#begin('~/.local/share/nvim/plugged')
-
-" vim首页
-Plug 'mhinz/vim-startify'
-
-" vim-airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " 图标
 Plug 'ryanoasis/vim-devicons'
 
 " vim Theme
 Plug 'sainnhe/gruvbox-material'
 Plug 'w0ng/vim-hybrid'
-" 文件树插件
-Plug 'preservim/nerdtree'
 
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -53,9 +28,6 @@ Plug 'mattn/webapi-vim'
 
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
-" Use release branch (recommend)
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'voldikss/vim-translator'
 
 " 括号匹配
@@ -70,7 +42,3 @@ Plug 'junegunn/fzf.vim'
 
 " 批量替换
 Plug 'brooth/far.vim'
-
-" Initialize plugin system
-call plug#end()
-
