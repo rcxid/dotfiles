@@ -20,6 +20,7 @@ local function plugins()
   -- vim theme
   use 'sainnhe/gruvbox-material'
   use 'navarasu/onedark.nvim'
+  use 'martinsione/darkplus.nvim'
   -- vim-airline
   -- use {
   --   'vim-airline/vim-airline',
