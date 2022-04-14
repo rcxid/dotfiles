@@ -19,6 +19,7 @@ local options = {
     sidescrolloff   = 8;
     splitbelow      = true;
     splitright      = true;
+    termguicolors   = true;
     mouse           = 'a';          -- 启用鼠标
 }
 
