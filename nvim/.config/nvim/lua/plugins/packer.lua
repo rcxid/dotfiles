@@ -16,20 +16,15 @@ local function plugins()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- vim startify
-  use 'mhinz/vim-startify'
+  -- use 'mhinz/vim-startify'
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
   -- vim theme
   use 'sainnhe/gruvbox-material'
   use 'navarasu/onedark.nvim'
   use 'martinsione/darkplus.nvim'
-  -- vim-airline
-  -- use {
-  --   'vim-airline/vim-airline',
-  --   requires = {
-  --     'vim-airline/vim-airline-themes',
-  --     -- 综合图标支持such vim-airline lightline, vim-startify
-  --     -- 'ryanoasis/vim-devicons'
-  --   }
-  -- }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -122,7 +117,9 @@ local function plugins()
   -- :TSUpdate
   use {'nvim-treesitter/nvim-treesitter' }
 
-  use 'airblade/vim-gitgutter'
+  -- use 'airblade/vim-gitgutter'
+  use 'lewis6991/gitsigns.nvim'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   use 'thinca/vim-quickrun'
 end

@@ -1,8 +1,35 @@
 #!/bin/lua
 
+local status_ok, nvim_tree = pcall(require, 'nvim-tree')
+if not status_ok then
+  vim.notify('nvim-tree not found!')
+  return
+end
+
+vim.g.nvim_tree_icons = {
+  default = "",
+  symlink = "",
+  git = {
+    unstaged = "",
+    staged = "s",
+    unmerged = "",
+    renamed = "➜",
+    deleted = "",
+    untracked = "U",
+    ignored = "◌",
+  },
+  folder = {
+    default = "",
+    open = "",
+    empty = "",
+    empty_open = "",
+    symlink = "",
+  },
+}
+
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require('nvim-tree').setup {
+nvim_tree.setup {
   disable_netrw        = true,
   hijack_netrw         = true,
   open_on_setup        = false,
@@ -48,7 +75,7 @@ require('nvim-tree').setup {
     height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
+    auto_resize = true,
     mappings = {
       custom_only = false,
       list = {}

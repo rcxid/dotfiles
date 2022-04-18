@@ -6,12 +6,12 @@ local prefix = 'plugins'
 
 local modules = {
   'packer',
+  'alpha',
   'lspconfig',
   'nvim-cmp',
   'snippets',
   'rnvimr',
   'vim-choosewin',
-  -- 'vim-airline',
   'lualine',
   'bufferline',
   'vim-floaterm',
@@ -23,6 +23,8 @@ local modules = {
   'lua-language-server',
   'tagbar',
   'telescope',
+  'gitsigns',
+  'diffview',
 }
 
-module.load_modules(modules, prefix)
+module.setup(modules, prefix)
