@@ -12,34 +12,43 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 -- install plugin
-local function plugins()
+local function plugins(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  -- vim startify
-  -- use 'mhinz/vim-startify'
+  -- vim首页
   use {
     'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    requires = {
+      'kyazdani42/nvim-web-devicons'
+    }
   }
   -- vim theme
   use 'sainnhe/gruvbox-material'
   use 'navarasu/onedark.nvim'
   use 'martinsione/darkplus.nvim'
+  -- vim状态栏
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    }
   }
-  use 'SmiteshP/nvim-gps' -- statusline show class structure
-  -- using packer.nvim
+  -- statusline show class structure
+  use 'SmiteshP/nvim-gps'
+  -- nvim buffer line
   use {
     'akinsho/bufferline.nvim',
-    tag = "*",
-    requires = 'kyazdani42/nvim-web-devicons'
+    tag = '*',
+    requires = {
+      'kyazdani42/nvim-web-devicons'
+    }
   }
   -- 图标支持such vim-airline lightline, vim-startify
   use 'ryanoasis/vim-devicons'
   -- ranger
   use 'kevinhwang91/rnvimr'
+  -- nvim file explorer
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -48,7 +57,10 @@ local function plugins()
     config = function() require('nvim-tree').setup {} end
   }
   -- markdown
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && yarn install'
+  }
   -- 括号自动匹配
   use 'jiangmiao/auto-pairs'
   -- lsp
@@ -119,9 +131,14 @@ local function plugins()
   -- :TSUpdate
   use {'nvim-treesitter/nvim-treesitter' }
 
-  -- use 'airblade/vim-gitgutter'
+  -- nvim git插件
   use 'lewis6991/gitsigns.nvim'
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use {
+    'sindrets/diffview.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
 
   use 'thinca/vim-quickrun'
 end
@@ -134,12 +151,12 @@ local config = {
   },
   display = {
     open_fn = function()
-        return require('packer.util').float({ border = 'single' })
+      return require('packer.util').float({ border = 'single' })
     end
   }
 }
 
-return require('packer').startup({
+return require('packer').startup {
   plugins,
-	config = config
-})
+  config = config
+}
