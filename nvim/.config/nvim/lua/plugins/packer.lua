@@ -62,7 +62,7 @@ local function plugins(use)
     run = 'cd app && yarn install'
   }
   -- 括号自动匹配
-  use 'jiangmiao/auto-pairs'
+  use 'windwp/nvim-autopairs'
   -- lsp
   use 'neovim/nvim-lspconfig'
   use {
@@ -141,6 +141,7 @@ local function plugins(use)
   }
 
   use 'thinca/vim-quickrun'
+  use 'Pocco81/AutoSave.nvim'
 end
 
 -- packer.vim配置

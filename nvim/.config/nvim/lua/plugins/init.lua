@@ -7,6 +7,7 @@ local prefix = 'plugins'
 local modules = {
   'packer',
   'alpha',
+  'autosave',
   'lspconfig',
   'nvim-cmp',
   'snippets',
@@ -26,6 +27,7 @@ local modules = {
   'telescope',
   'gitsigns',
   'diffview',
+  'nvim-autopairs',
 }
 
 module.setup(modules, prefix)
