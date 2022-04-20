@@ -104,7 +104,9 @@ local function plugins()
     }
   }
 
-  use 'voldikss/vim-floaterm'
+  -- use 'voldikss/vim-floaterm'
+  use 'akinsho/toggleterm.nvim'
+  use 'kdheepak/lazygit.nvim'
 
   -- tagbar
   use 'preservim/tagbar'

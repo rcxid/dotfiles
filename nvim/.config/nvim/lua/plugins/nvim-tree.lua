@@ -15,7 +15,7 @@ vim.g.nvim_tree_icons = {
     unmerged = "",
     renamed = "➜",
     deleted = "",
-    untracked = "U",
+    untracked = "u",
     ignored = "◌",
   },
   folder = {
