@@ -1,27 +1,49 @@
-local status, nvim_lsp = pcall(require, "lspconfig")
-if (not status) then
+#!/bin/lua
+
+local cmp_status_ok, cmp = pcall(require, 'cmp')
+if not cmp_status_ok then
+  vim.notify('nvim-cmp not found!')
   return
 end
 
---local nvim_lsp = require('lspconfig')
---typescript支持
---require("lspconf.typescript")
---json支持
---require("lspconf.json")
---lua
---require("lspconf.lua")
---普通的语言支持
---require("lspconf.common")
+local snip_status_ok, luasnip = pcall(require, 'luasnip')
+if not snip_status_ok then
+  vim.notify("luasnip not found!")
+  return
+end
+
+local kind_icons = {
+  Text = "",
+  Method = "m",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
 
--- luasnip setup
-local luasnip = require "luasnip"
 local lspkind = require("lspkind")
-
--- nvim-cmp setup
-local cmp = require "cmp"
 
 -- 自动提示1 详情信息
 local cmpFormat1 = function(entry, vim_item)
@@ -112,12 +134,12 @@ cmp.setup {
   },
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end
   },
   mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -147,8 +169,14 @@ cmp.setup {
 
   },
   sources = {
-    {name = "nvim_lsp"},
-    {name = "luasnip"}, --{name = "nvim_lua"},
+    { name = "nvim_lsp" },
+    -- { name = "cmp_tabnine" },
+    { name = "nvim_lua" },
+    { name = "luasnip" },
+    -- { name = "buffer" },
+    -- { name = "spell" },
+    { name = "path" },
+
     {
       name = "buffer",
       option = {
@@ -158,10 +186,23 @@ cmp.setup {
       }
     },
     --{name = "look"},
-    {name = "path"}
-    --{name = "cmp_tabnine"},
     --{name = "calc"},
-    --{name = "spell"},
     --{name = "emoji"}
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   }
 }
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' }
+  }
+})
