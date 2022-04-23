@@ -10,20 +10,26 @@ vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
   git = {
-    unstaged = "",
-    staged = "s",
+    -- unstaged = "",
+    unstaged = "✗",
+    -- staged = "s",
+    staged = "✓",
     unmerged = "",
     renamed = "➜",
     deleted = "",
-    untracked = "u",
+    -- untracked = "u",
+    untracked = "★",
     ignored = "◌",
   },
   folder = {
+    arrow_open = "",
+    arrow_closed = "",
     default = "",
     open = "",
     empty = "",
     empty_open = "",
     symlink = "",
+    symlink_open = "",
   },
 }
 
@@ -100,4 +106,6 @@ nvim_tree.setup {
 
 require('core.keymap').load_mapping_configs({
   { 'n,i', '<C-n>', '<Esc>:NvimTreeToggle<CR>' },
+  { 'n,i', '<leader>r', '<Esc>:NvimTreeRefresh<CR>' },
+  { 'n,i', '<leader>n', '<Esc>:NvimTreeFindFile<CR>' },
 })

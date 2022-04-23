@@ -26,6 +26,7 @@ local function plugins(use)
   use 'sainnhe/gruvbox-material'
   use 'navarasu/onedark.nvim'
   use 'martinsione/darkplus.nvim'
+  -- use 'w0ng/vim-hybrid'
   -- vim状态栏
   use {
     'nvim-lualine/lualine.nvim',
