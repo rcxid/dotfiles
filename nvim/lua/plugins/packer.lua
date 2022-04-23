@@ -143,6 +143,10 @@ local function plugins(use)
 
   use 'thinca/vim-quickrun'
   use 'Pocco81/AutoSave.nvim'
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+  }
 end
 
 -- packer.vim配置
