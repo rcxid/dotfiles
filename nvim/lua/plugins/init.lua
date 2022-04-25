@@ -28,6 +28,7 @@ local modules = {
   'gitsigns',
   'diffview',
   'nvim-autopairs',
+  'symbols-outline',
 }
 
 module.setup(modules, prefix)

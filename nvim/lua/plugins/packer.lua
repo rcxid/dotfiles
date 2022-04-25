@@ -11,6 +11,12 @@ end
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+  vim.notify('packer not found!')
+  return
+end
+
 -- install plugin
 local function plugins(use)
   -- Packer can manage itself
@@ -26,6 +32,8 @@ local function plugins(use)
   use 'sainnhe/gruvbox-material'
   use 'navarasu/onedark.nvim'
   use 'martinsione/darkplus.nvim'
+  use 'projekt0n/github-nvim-theme'
+  use 'sainnhe/sonokai'
   -- use 'w0ng/vim-hybrid'
   -- vim状态栏
   use {
@@ -123,6 +131,7 @@ local function plugins(use)
 
   -- tagbar
   use 'preservim/tagbar'
+  use 'simrat39/symbols-outline.nvim'
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -162,7 +171,7 @@ local config = {
   }
 }
 
-return require('packer').startup {
+return packer.startup {
   plugins,
   config = config
 }
