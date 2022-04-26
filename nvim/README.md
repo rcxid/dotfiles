@@ -11,3 +11,6 @@
 - telescope.nvim
   - ripgrep
   - fd
+
+- nvim-treesitter
+  - tree-sitter
