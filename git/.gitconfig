@@ -8,15 +8,23 @@
 [core]
     pager = delta
 
-[delta]
-    plus-style = "syntax #012800"
-    minus-style = "syntax #340001"
-    # syntax-theme = Monokai Extended
-    syntax-theme = Nord
-    # navigate = true
-    features = side-by-side line-numbers
-
 [interactive]
     diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+    line-numbers = true
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    #syntax-theme = Monokai Extended
+    syntax-theme = Nord
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
 [pull]
 	rebase = false
