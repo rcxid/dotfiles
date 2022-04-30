@@ -21,6 +21,7 @@ end
 local function plugins(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim'
   -- vim首页
   use {
     'goolord/alpha-nvim',
@@ -152,10 +153,13 @@ local function plugins(use)
 
   use 'thinca/vim-quickrun'
   use 'Pocco81/AutoSave.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
   use {
     'glacambre/firenvim',
     run = function() vim.fn['firenvim#install'](0) end
   }
+  use 'folke/todo-comments.nvim'
+  use 'ahmedkhalf/project.nvim'
 end
 
 -- packer.vim配置

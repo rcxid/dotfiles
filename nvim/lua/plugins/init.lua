@@ -29,6 +29,9 @@ local modules = {
   'diffview',
   'nvim-autopairs',
   'symbols-outline',
+  'indent-blankline',
+  'todo-comments',
+  'project'
 }
 
 module.setup(modules, prefix)
