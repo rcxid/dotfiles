@@ -11,7 +11,7 @@ local modules = {
   'lspconfig',
   'nvim-cmp',
   'snippets',
-  'rnvimr',
+  -- 'rnvimr',
   'vim-choosewin',
   'lualine',
   'bufferline',
