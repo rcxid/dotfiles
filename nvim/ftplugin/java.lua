@@ -110,16 +110,16 @@ local options = {
 
 -- java项目按键映射配置
 local mappings = {
-  { 'n',  '<leader>f',    "<Cmd>lua vim.lsp.buf.formatting()<CR>",                      options },
-  { 'n',  '<leader>i',    "<Cmd>lua vim.lsp.buf.code_action()<CR>",                     options },
-  { 'n',  '<leader>o',    "<Cmd>lua require('jdtls').organize_imports()<CR>",           options },
-  { 'n',  '<leader>c',    "<Cmd>lua require('jdtls').extract_constant()<CR>",           options },
-  { 'v',  '<leader>c',    "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",  options },
-  { 'n',  '<leader><CR>', "<Cmd>lua require('jdtls').extract_variable()<CR>",           options },
-  { 'v',  '<leader><CR>', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",  options },
-  { 'v',  '<leader>m',    "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",    options },
-  { 'n',  '<leader>df',   "<Cmd>lua require('jdtls').test_class()<CR>",                 options },
-  { 'n',  '<leader>dn',   "<Cmd>lua require('jdtls').test_nearest_method()<CR>",        options },
+  { 'n',  '<space>f',    "<Cmd>lua vim.lsp.buf.formatting()<CR>",                      options },
+  { 'n',  '<space>i',    "<Cmd>lua vim.lsp.buf.code_action()<CR>",                     options },
+  { 'n',  '<space>o',    "<Cmd>lua require('jdtls').organize_imports()<CR>",           options },
+  { 'n',  '<space>c',    "<Cmd>lua require('jdtls').extract_constant()<CR>",           options },
+  { 'v',  '<space>c',    "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",  options },
+  { 'n',  '<space><CR>', "<Cmd>lua require('jdtls').extract_variable()<CR>",           options },
+  { 'v',  '<space><CR>', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",  options },
+  { 'v',  '<space>m',    "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",    options },
+  { 'n',  '<space>df',   "<Cmd>lua require('jdtls').test_class()<CR>",                 options },
+  { 'n',  '<space>dn',   "<Cmd>lua require('jdtls').test_nearest_method()<CR>",        options },
 }
 
 -- 加载按键映射配置

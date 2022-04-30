@@ -106,6 +106,6 @@ nvim_tree.setup {
 
 require('core.keymap').load_mapping_configs({
   { 'n,i', '<C-n>', '<Esc>:NvimTreeToggle<CR>' },
-  { 'n,i', '<leader>r', '<Esc>:NvimTreeRefresh<CR>' },
-  { 'n,i', '<leader>n', '<Esc>:NvimTreeFindFile<CR>' },
+  { 'n,i', '<space>r', '<Esc>:NvimTreeRefresh<CR>' },
+  { 'n,i', '<space>n', '<Esc>:NvimTreeFindFile<CR>' },
 })

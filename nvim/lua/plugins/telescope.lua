@@ -40,10 +40,10 @@ local options = {
 
 -- 按键映射配置
 local mappings = {
-  { 'n',  '<leader>ff',    "<cmd>Telescope find_files<cr>" },
-  { 'n',  '<leader>fg',    "<cmd>Telescope live_grep<cr>"  },
-  { 'n',  '<leader>fb',    "<cmd>Telescope buffers<cr>"    },
-  { 'n',  '<leader>fh',    "<cmd>Telescope help_tags<cr>"  },
+  { 'n',  '<space>ff',    "<cmd>Telescope find_files<cr>", options },
+  { 'n',  '<space>fg',    "<cmd>Telescope live_grep<cr>",  options },
+  { 'n',  '<space>fb',    "<cmd>Telescope buffers<cr>",    options },
+  { 'n',  '<space>fh',    "<cmd>Telescope help_tags<cr>",  options },
 }
 
 -- 加载按键映射配置
