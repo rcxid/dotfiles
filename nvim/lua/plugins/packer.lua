@@ -22,6 +22,10 @@ local function plugins(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
+  use 'rcarriga/nvim-notify'
+  use 'numToStr/Comment.nvim'
+  use 'windwp/nvim-spectre'
+  use 'ethanholz/nvim-lastplace'
   -- vim首页
   use {
     'goolord/alpha-nvim',
@@ -63,8 +67,7 @@ local function plugins(use)
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    config = function() require('nvim-tree').setup {} end
+    }
   }
   -- markdown
   use {
