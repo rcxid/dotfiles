@@ -32,7 +32,8 @@ local modules = {
   'symbols-outline',
   'indent-blankline',
   'todo-comments',
-  'project'
+  'project',
+  'which-key'
 }
 
 module.setup(modules, prefix)

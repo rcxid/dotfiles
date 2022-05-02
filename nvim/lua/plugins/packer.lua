@@ -164,6 +164,7 @@ local function plugins(use)
   use 'folke/todo-comments.nvim'
   use 'ahmedkhalf/project.nvim'
   use 'norcalli/nvim-colorizer.lua'
+  use 'folke/which-key.nvim'
 end
 
 -- packer.vim配置
