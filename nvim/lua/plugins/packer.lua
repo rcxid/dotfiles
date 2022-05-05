@@ -78,6 +78,7 @@ local function plugins(use)
   use 'windwp/nvim-autopairs'
   -- lsp
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
   -- cmp
   use {
     'hrsh7th/nvim-cmp',

@@ -9,6 +9,7 @@ local modules = {
   'alpha',
   'autosave',
   'lspconfig',
+  'nvim-lsp-installer',
   'snippets',
   'nvim-cmp',
   -- 'rnvimr',
