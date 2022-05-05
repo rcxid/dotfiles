@@ -33,7 +33,8 @@ local modules = {
   'indent-blankline',
   'todo-comments',
   'project',
-  'which-key'
+  'which-key',
+  'neovim-session-manager'
 }
 
 module.setup(modules, prefix)

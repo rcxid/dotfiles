@@ -165,6 +165,7 @@ local function plugins(use)
   use 'ahmedkhalf/project.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'folke/which-key.nvim'
+  use 'Shatur/neovim-session-manager'
 end
 
 -- packer.vim配置
