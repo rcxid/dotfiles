@@ -143,7 +143,7 @@ local function plugins(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {'nvim-telescope/telescope-ui-select.nvim' }
-  -- :TSUpdate
+  -- 增强代码高亮 :TSUpdate
   use {'nvim-treesitter/nvim-treesitter' }
 
   -- nvim git插件

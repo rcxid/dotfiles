@@ -20,6 +20,7 @@ local modules = {
   'toggleterm',
   'nvim-colorizer',
   'nvim-tree',
+  'nvim-treesitter',
   'rust-tools',
   'python',
   'golang',
