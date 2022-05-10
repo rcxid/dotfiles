@@ -8,8 +8,6 @@ local modules = {
   'packer',
   'alpha',
   'autosave',
-  'lspconfig',
-  'nvim-lsp-installer',
   'snippets',
   'nvim-cmp',
   -- 'rnvimr',
@@ -21,11 +19,6 @@ local modules = {
   'nvim-colorizer',
   'nvim-tree',
   'nvim-treesitter',
-  'rust-tools',
-  'python',
-  'golang',
-  -- 'groovy',
-  'lua-language-server',
   'tagbar',
   'telescope',
   'gitsigns',
@@ -36,7 +29,8 @@ local modules = {
   'todo-comments',
   'project',
   'which-key',
-  'neovim-session-manager'
+  'neovim-session-manager',
+  'lsp'
 }
 
 module.setup(modules, prefix)

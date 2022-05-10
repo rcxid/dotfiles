@@ -1,6 +1,6 @@
 #!/bin/lua
 
-local lsp = require('lspconfig')
+-- local lsp = require('lspconfig')
 
 -- 提示信息自定义图标 icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

@@ -21,9 +21,10 @@ function mod.load_modules(modules, prefix)
     modules = handle(prefix, modules)
   end
   for _, module in ipairs(modules) do
-    local ok, err = pcall(require, module)
+    local ok, _ = pcall(require, module)
     if not ok then
-      error("Error loading " .. module .. "\n\n" .. err)
+      -- error("Error loading " .. module .. "\n\n" .. err)
+      vim.notify('Error loading ' .. module .. '!')
     end
   end
 end
