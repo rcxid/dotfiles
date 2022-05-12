@@ -31,7 +31,8 @@ local modules = {
   'which-key',
   'neovim-session-manager',
   'neovim-cmake',
-  'lsp'
+  'lsp',
+  'aerial'
 }
 
 module.setup(modules, prefix)
