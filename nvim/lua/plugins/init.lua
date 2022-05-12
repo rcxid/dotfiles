@@ -30,6 +30,7 @@ local modules = {
   'project',
   'which-key',
   'neovim-session-manager',
+  'neovim-cmake',
   'lsp'
 }
 

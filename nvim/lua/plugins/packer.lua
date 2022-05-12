@@ -130,6 +130,8 @@ local function plugins(use)
     }
   }
 
+  use 'Shatur/neovim-cmake'
+
   -- use 'voldikss/vim-floaterm'
   use 'akinsho/toggleterm.nvim'
   use 'kdheepak/lazygit.nvim'
