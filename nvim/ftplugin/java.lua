@@ -1,16 +1,22 @@
 #!/bin/lua
 
-local maven_setting = '/opt/maven/conf/settings.xml'
+local home_dir = os.getenv('HOME')
+local data_dir = vim.fn.stdpath('data')
+local sdkman_dir = os.getenv('SDKMAN_DIR')
+local maven_setting = sdkman_dir .. '/candidates/maven/3.8.5/conf/settings.xml'
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/home/vision/code/java/jdtls-workspace/' .. project_name
+local workspace_dir = home_dir .. '/code/java/jdtls-workspace/' .. project_name
 -- local jar_path = vim.fn.system({'locate', 'org.eclipse.equinox.launcher_'})
+local jar_file = 'org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar'
+local jar_path = data_dir .. '/lsp_servers/jdtls/plugins/' .. jar_file
+local config_dir = data_dir .. '/lsp_servers/jdtls/config_linux'
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
   -- The command that starts the language server
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = {
-    '/usr/lib/jvm/java-11-openjdk/bin/java',
+    'java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
@@ -21,8 +27,8 @@ local config = {
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-    '-jar', '/usr/share/java/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-    '-configuration', '/usr/share/java/jdtls/config_linux',
+    '-jar', jar_path,
+    '-configuration', config_dir,
     '-data', workspace_dir,
   },
 
@@ -36,7 +42,7 @@ local config = {
   -- for a list of options
   settings = {
     java = {
-      home = "/usr/lib/jvm/java-11-openjdk",
+      home = sdkman_dir .. "/candidates/java/11.0.12-open",
       eclipse = {
         downloadSources = true,
       },
@@ -55,11 +61,11 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-1.8",
-            path = "/usr/lib/jvm/java-8-openjdk",
+            path = sdkman_dir .. "/candidates/java/8.0.302-open",
           },
           {
             name = "JavaSE-11",
-            path = "/usr/lib/jvm/java-11-openjdk",
+            path = sdkman_dir .. "/candidates/java/11.0.12-open",
           },
         }
       },
@@ -108,22 +114,6 @@ local options = {
   silent = true,
 }
 
--- java项目按键映射配置
-local mappings = {
-  { 'n',  '<space>f',    "<Cmd>lua vim.lsp.buf.formatting()<CR>",                      options },
-  { 'n',  '<space>i',    "<Cmd>lua vim.lsp.buf.code_action()<CR>",                     options },
-  { 'n',  '<space>o',    "<Cmd>lua require('jdtls').organize_imports()<CR>",           options },
-  { 'n',  '<space>c',    "<Cmd>lua require('jdtls').extract_constant()<CR>",           options },
-  { 'v',  '<space>c',    "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",  options },
-  { 'n',  '<space><CR>', "<Cmd>lua require('jdtls').extract_variable()<CR>",           options },
-  { 'v',  '<space><CR>', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",  options },
-  { 'v',  '<space>m',    "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",    options },
-  { 'n',  '<space>df',   "<Cmd>lua require('jdtls').test_class()<CR>",                 options },
-  { 'n',  '<space>dn',   "<Cmd>lua require('jdtls').test_nearest_method()<CR>",        options },
-}
-
--- 加载按键映射配置
-require('core.keymap').load_mapping_configs(mappings)
 
 vim.cmd([[
 command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)

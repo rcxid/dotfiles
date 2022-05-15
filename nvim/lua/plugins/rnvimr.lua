@@ -1,6 +1,5 @@
 #!/bin/lua
 
-local keymap = require('core.keymap')
 local setting = require('core.setting')
 
 local variables = {
@@ -10,12 +9,5 @@ local variables = {
     {'rnvimr_ranger_cmd', 'ranger --cmd="set viewmode multipane"'},
 }
 
--- 按键映射配置
-local mappings = {
-    { 'n', '<C-r>', ':RnvimrToggle<CR>' },
-}
-
 -- 变量设置
 setting.set_variables(variables)
--- 加载按键映射配置
-keymap.load_mapping_configs(mappings)

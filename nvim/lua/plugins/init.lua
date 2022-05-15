@@ -19,7 +19,6 @@ local modules = {
   'nvim-colorizer',
   'nvim-tree',
   'nvim-treesitter',
-  'tagbar',
   'telescope',
   'gitsigns',
   'diffview',

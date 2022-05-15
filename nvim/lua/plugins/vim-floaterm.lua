@@ -4,7 +4,3 @@ vim.g.floaterm_wintype='float'
 vim.g.floaterm_width=0.9
 vim.g.floaterm_height=0.4
 -- vim.g.floaterm_rootmarkers=['.project', '.git', '.hg', '.svn', '.root', '.gitignore']
-
-require('core.keymap').load_mapping_configs({
-  { 'n,i', '<C-t>', '<Esc>:FloatermToggle<CR>' },
-})
