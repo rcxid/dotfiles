@@ -32,14 +32,20 @@ local mappings = {
   { 'n',     '<space>fh',    '<cmd>Telescope help_tags<cr>',     options },
   -- nvim-tree
   { 'n',     '<C-n>',        ':NvimTreeToggle<CR>',              options },
-  { 'n',     '<space>r',     ':NvimTreeRefresh<CR>',             options },
-  { 'n',     '<space>n',     ':NvimTreeFindFile<CR>',            options },
+  { 'n',     '<space>tr',    ':NvimTreeRefresh<CR>',             options },
+  { 'n',     '<space>tf',    ':NvimTreeFindFile<CR>',            options },
   -- vim-floaterm
   { 'n,i',   '<C-t>',        '<Esc>:FloatermToggle<CR>',         options },
   -- tagbar
   { 'n',     '<A-b>',        ':TagbarToggle<CR>',                options },
   -- ranger
   { 'n',     '<C-r>',        ':RnvimrToggle<CR>',                options },
+  -- rust
+  { 'n',     '<space>rr',    ':RustRunnables<CR>',               options },
+  { 'n',     '<space>rh',    ':RustHoverActions<CR>',            options },
+  { 'n',     '<space>ro',    ':RustOpenCargo<CR>',               options },
+  { 'n',     '<space>ri',    ':RustToggleInlayHints<CR>',        options },
+  { 'n',     '<space>re',    ':RustExpandMacro<CR>',             options },
   -- jdtls
   { 'n',     '<space>jf',    '<Cmd>lua vim.lsp.buf.formatting()<CR>'     },
   { 'n',     '<space>ji',    '<Cmd>lua vim.lsp.buf.code_action()<CR>'    },
