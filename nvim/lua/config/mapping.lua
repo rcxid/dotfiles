@@ -58,10 +58,11 @@ local mappings = {
   { 'n',     '<space>df',    "<Cmd>lua require('jdtls').test_class()<CR>" },
   { 'n',     '<space>dn',    "<Cmd>lua require('jdtls').test_nearest_method()<CR>" },
   -- cmake
-  { 'n',     '<space>cc', ':CMake create_project<CR>', options },
-  { 'n',     '<space>cb', ':CMake build_all<CR>', options },
-  { 'n',     '<space>cr', ':CMake run<CR>', options },
-  { 'n',     '<space>cs', ':CMake set_target_args<CR>', options },
+  { 'n',     '<space>cc', ':CMake create_project<CR>',  options },
+  { 'n',     '<space>cb', ':CMake build_all<CR>',       options },
+  { 'n',     '<space>cr', ':CMake run<CR>',             options },
+  { 'n',     '<space>ca', ':CMake set_target_args<CR>', options },
+  { 'n',     '<space>cs', ':CMake select_target<CR>',   options },
 }
 
 -- 加载按键映射配置
