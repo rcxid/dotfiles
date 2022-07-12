@@ -22,9 +22,11 @@ session_manager.setup {
   max_path_length = 80,  -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
 }
 
-vim.cmd([[
-  augroup _open_nvim_tree
-    autocmd! * <buffer>
-    autocmd SessionLoadPost * silent! lua require("nvim-tree").toggle(false, true)
-  augroup end
-]])
+local config_group = vim.api.nvim_create_augroup('OpenNvimTree', {}) -- A global group for all your config autocommands
+
+vim.api.nvim_create_autocmd({ 'SessionLoadPost' }, {
+  group = config_group,
+  callback = function()
+    require('nvim-tree').toggle(false, true, vim.fn.getcwd())
+  end,
+})
