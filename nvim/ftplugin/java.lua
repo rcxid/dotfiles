@@ -108,13 +108,6 @@ end
 -- or attaches to an existing client & server depending on the `root_dir`.
 require('jdtls').start_or_attach(config)
 
-
-local options = {
-  noremap = true,
-  silent = true,
-}
-
-
 vim.cmd([[
 command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)
 command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)
@@ -123,3 +116,19 @@ command! -buffer JdtJol lua require('jdtls').jol()
 command! -buffer JdtBytecode lua require('jdtls').javap()
 command! -buffer JdtJshell lua require('jdtls').jshell()
 ]])
+
+vim.api.nvim_command('command! -bar JavaFormat lua vim.lsp.buf.formatting()')
+
+require('core.keymap').setup {
+  -- jdtls
+  { 'n',        '<space>jf',    ':JavaFormat<cr>'     },
+  { 'n',        '<space>ji',    '<Cmd>lua vim.lsp.buf.code_action()<CR>'    },
+  { 'n',        '<space>jo',    "<Cmd>lua require('jdtls').organize_imports()<CR>" },
+  { 'n',        '<space>jc',    "<Cmd>lua require('jdtls').extract_constant()<CR>" },
+  { 'v',        '<space>jc',    "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>" },
+  { 'n',        '<space><CR>',  "<Cmd>lua require('jdtls').extract_variable()<CR>" },
+  { 'v',        '<space><CR>',  "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>" },
+  { 'v',        '<space>m',     "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>" },
+  { 'n',        '<space>df',    "<Cmd>lua require('jdtls').test_class()<CR>" },
+  { 'n',        '<space>dn',    "<Cmd>lua require('jdtls').test_nearest_method()<CR>" },
+}
