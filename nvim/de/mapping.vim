@@ -2,8 +2,6 @@
 "inoremap <expr> <c-j> ("\<C-n>")
 "inoremap <expr> <c-k> ("\<C-p>")
 "
-"" SHIFT-TAB will go back
-"nnoremap <S-TAB> :bprevious<CR>
 "
 "" <TAB>: completion.
 "inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"

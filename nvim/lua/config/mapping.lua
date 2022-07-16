@@ -10,7 +10,6 @@ require('core.keymap').setup {
   -- nvim基本按键配置
   { 'i',        'jj',           '<Esc>',                            options },
   { 'i',        'jk',           '<Esc>',                            options },
-  { 'n',        '<tab>',        ':bNext<CR>',                       options },
   { 'i',        '<C-u>',        '<Esc>viwUi',                       options },
   { 'n',        '<C-u>',        'viwU<Esc>',                        options },
   { 'n',        '<A-h>',        '<C-w>h',                           options },
@@ -23,6 +22,7 @@ require('core.keymap').setup {
   { 'n,i,v',    '<Down>',       '<Nop>',                            options },
   { 'n,i,v',    '<Left>',       '<Nop>',                            options },
   { 'n,i,v',    '<Right>',      '<Nop>',                            options },
+  { 'n',        '<space><tab>', ':bNext<cr>',                       options },
   -- buffer
   { 'n',        '<space>q',     ':bd<cr>',                          options },
   -- telescope
@@ -41,11 +41,13 @@ require('core.keymap').setup {
   -- ranger
   { 'n',        '<C-r>',        ':RnvimrToggle<CR>',                options },
   -- rust
-  { 'n',        '<space>rr',    ':RustRunnables<CR>',               options },
-  { 'n',        '<space>rh',    ':RustHoverActions<CR>',            options },
-  { 'n',        '<space>ro',    ':RustOpenCargo<CR>',               options },
-  { 'n',        '<space>ri',    ':RustToggleInlayHints<CR>',        options },
+  { 'n',        '<space>ra',    ':RustCodeAction<CR>',              options },
   { 'n',        '<space>re',    ':RustExpandMacro<CR>',             options },
+  { 'n',        '<space>rf',    ':CodeFormat<CR>',                  options },
+  { 'n',        '<space>rh',    ':RustHoverActions<CR>',            options },
+  { 'n',        '<space>ri',    ':RustToggleInlayHints<CR>',        options },
+  { 'n',        '<space>ro',    ':RustOpenCargo<CR>',               options },
+  { 'n',        '<space>rr',    ':RustRunnables<CR>',               options },
   -- cmake
   { 'n',        '<space>cc',    ':CMake create_project<CR>',        options },
   { 'n',        '<space>cb',    ':CMake build_all<CR>',             options },
