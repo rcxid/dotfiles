@@ -11,7 +11,8 @@ local modules = {
   'golang',
   'lua',
   'python',
-  'rust'
+  'rust',
+  'html'
 }
 
 module.setup(modules, prefix)
