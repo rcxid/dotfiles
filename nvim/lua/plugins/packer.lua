@@ -129,6 +129,14 @@ local function plugins(use)
       'mfussenegger/nvim-dap'
     }
   }
+  use {
+    'saecki/crates.nvim',
+    tag = 'v0.2.1',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup()
+    end,
+  }
 
   use 'Shatur/neovim-cmake'
 
