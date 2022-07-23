@@ -12,7 +12,8 @@ local modules = {
   'lua',
   'python',
   'rust',
-  'html'
+  'html',
+  'css'
 }
 
 module.setup(modules, prefix)
