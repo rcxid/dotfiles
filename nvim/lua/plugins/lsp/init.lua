@@ -6,7 +6,8 @@ local prefix = 'plugins.lsp'
 
 local modules = {
   'lspconfig',
-  'nvim-lsp-installer',
+  -- 'nvim-lsp-installer',
+  'mason',
   'clangd',
   'golang',
   'lua',
