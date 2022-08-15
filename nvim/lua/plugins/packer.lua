@@ -168,7 +168,8 @@ local function plugins(use)
   }
 
   use 'thinca/vim-quickrun'
-  use 'Pocco81/auto-save.nvim'
+  -- use 'Pocco81/auto-save.nvim'
+  use 'nullishamy/autosave.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use {
     'glacambre/firenvim',

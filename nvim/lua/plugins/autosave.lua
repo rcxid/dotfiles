@@ -1,24 +1,32 @@
-#!/bin/lua
-
-local status_ok, autosave = pcall(require, "auto-save")
-if not status_ok then
-  vim.notify("autosave not found!")
-  return
-end
-
-autosave.setup {
-  enabled = true,
-  -- execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-  execution_message = '',
-  events = {"InsertLeave", "TextChanged"},
-  conditions = {
-    exists = true,
-    filename_is_not = {},
-    filetype_is_not = {},
-    modifiable = true
-  },
-  write_all_buffers = false,
-  on_off_commands = true,
-  clean_command_line_interval = 0,
-  debounce_delay = 135
-}
+local filters = require('autosave.filters')
+-- Available filters:
+-- filters.opt 
+-- filters.not_empty 
+-- filters.modifiable 
+-- filters.writeable 
+-- filters.modified 
+-- filters.filetype 
+-- filters.custom 
+-- Each filter has luadoc to describe its functionality and usage.
+require('autosave').setup({
+    events = {
+        register = true, -- Should autosave register its autocommands
+        triggers = { -- The autocommands to register, if enabled
+            'InsertLeave', 'TextChanged'
+        }
+    },
+    debounce = {
+        enabled = true, -- Should debouncing be enabled
+        delay = 250 -- If enabled, only save the file at most every `delay` ms
+    },
+    filters = { -- The filters to apply, see above for all options.
+        filters.writeable,
+        filters.not_empty,
+        filters.modified,
+    },
+    hooks = {
+        on_enable = nil,  -- Called when the plugin is enabled for the first time.
+        pre_write = nil,  -- Called before the write sequence begins. (This happens before filter checks)
+        post_write = nil, -- Called after the write sequence. (This happens after the buffer has been saved)
+    }
+})
