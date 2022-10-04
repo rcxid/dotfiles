@@ -26,4 +26,4 @@ local opts = {
 
 require('rust-tools').setup(opts)
 
-vim.api.nvim_command('command! -bar CodeFormat lua vim.lsp.buf.formatting()')
+vim.api.nvim_command('command! -bar CodeFormat lua vim.lsp.buf.format({async=true})')
