@@ -21,6 +21,10 @@ local options = {
     splitright      = true;
     termguicolors   = true;
     mouse           = 'a';          -- 启用鼠标
+    foldmethod      = 'expr';
+    foldexpr        = 'nvim_treesitter#foldexpr()';
+    foldenable      = false;
+    foldlevel       = 99;
 }
 
 local variables = {
