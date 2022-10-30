@@ -32,6 +32,12 @@ rm -f "$alacritty_config_dir"
 ln -s "$dir/alacritty" "$alacritty_config_dir"
 echo "setting alacritty ok"
 
+echo "setting wezterm config"
+wezterm_config_dir="$HOME/.config/wezterm"
+rm -f "$wezterm_config_dir"
+ln -s "$dir/wezterm" "$wezterm_config_dir"
+echo "setting wezterm ok"
+
 echo "setting picom config"
 picom_config_dir="$HOME/.config/picom"
 rm -f "$picom_config_dir"
