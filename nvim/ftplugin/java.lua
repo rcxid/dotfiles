@@ -1,12 +1,23 @@
-local home_dir = os.getenv('HOME')
+local jdtls_ok, jdtls = pcall(require, 'jdtls')
+if not jdtls_ok then
+  return
+end
+
+local setup_ok, setup = pcall(require, 'jdtls.setup')
+if not setup_ok then
+  return
+end
+
 local data_dir = vim.fn.stdpath('data')
+local home_dir = os.getenv('HOME')
 local sdkman_dir = os.getenv('SDKMAN_DIR')
-local maven_setting = sdkman_dir .. '/candidates/maven/3.8.5/conf/settings.xml'
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = home_dir .. '/code/java/jdtls-workspace/' .. project_name
+local maven_setting = sdkman_dir .. '/candidates/maven/current/conf/settings.xml'
 local jar_file = 'org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar'
 local jar_path = data_dir .. '/mason/packages/jdtls/plugins/' .. jar_file
 local config_dir = data_dir .. '/mason/packages/jdtls/config_linux'
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local workspace_dir = home_dir .. '/code/java/jdtls_workspace/' .. project_name
+local project_root_dir = setup.find_root({'.git', 'mvnw', 'gradlew'})
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -32,7 +43,7 @@ local config = {
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
-  root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
+  root_dir = project_root_dir,
 
   -- Here you can configure eclipse.jdt.ls specific settings
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
@@ -102,12 +113,12 @@ config['on_attach'] = function(client, bufnr)
   -- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
   -- you make during a debug session immediately.
   -- Remove the option if you do not want that.
-  require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+  jdtls.setup_dap({ hotcodereplace = 'auto' })
 end
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
-require('jdtls').start_or_attach(config)
+jdtls.start_or_attach(config)
 
 vim.cmd([[
 command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)
