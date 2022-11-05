@@ -1,15 +1,12 @@
-#!/bin/lua
-
 local home_dir = os.getenv('HOME')
 local data_dir = vim.fn.stdpath('data')
 local sdkman_dir = os.getenv('SDKMAN_DIR')
 local maven_setting = sdkman_dir .. '/candidates/maven/3.8.5/conf/settings.xml'
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = home_dir .. '/code/java/jdtls-workspace/' .. project_name
--- local jar_path = vim.fn.system({'locate', 'org.eclipse.equinox.launcher_'})
 local jar_file = 'org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar'
-local jar_path = data_dir .. '/lsp_servers/jdtls/plugins/' .. jar_file
-local config_dir = data_dir .. '/lsp_servers/jdtls/config_linux'
+local jar_path = data_dir .. '/mason/packages/jdtls/plugins/' .. jar_file
+local config_dir = data_dir .. '/mason/packages/jdtls/config_linux'
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -42,7 +39,7 @@ local config = {
   -- for a list of options
   settings = {
     java = {
-      home = sdkman_dir .. "/candidates/java/11.0.12-open",
+      home = sdkman_dir .. "/candidates/java/17.0.5-oracle",
       eclipse = {
         downloadSources = true,
       },
@@ -64,8 +61,12 @@ local config = {
             path = sdkman_dir .. "/candidates/java/8.0.302-open",
           },
           {
-            name = "JavaSE-11",
-            path = sdkman_dir .. "/candidates/java/11.0.12-open",
+            name = "JavaSE-17",
+            path = sdkman_dir .. "/candidates/java/17.0.5-oracle",
+          },
+          {
+            name = "JavaSE-19",
+            path = sdkman_dir .. "/candidates/java/19.0.1-oracle",
           },
         }
       },
@@ -83,7 +84,7 @@ local config = {
   --   bundles = {}
   -- },
 
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  -- capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 
 -- This bundles definition is the same as in the previous section (java-debug installation)
