@@ -32,7 +32,8 @@ local modules = {
   'neovim-session-manager',
   'neovim-cmake',
   'lsp',
-  'aerial'
+  'aerial',
+  'scratch'
 }
 
 module.setup(modules, prefix)

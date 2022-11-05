@@ -183,6 +183,7 @@ local function plugins(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'folke/which-key.nvim'
   use 'Shatur/neovim-session-manager'
+  use 'LintaoAmons/scratch.nvim'
 
   if packer_bootstrap then
     packer.sync()
