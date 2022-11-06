@@ -32,6 +32,7 @@ local modules = {
   'neovim-session-manager',
   'neovim-cmake',
   'lsp',
+  'dap',
   'aerial',
   'scratch'
 }

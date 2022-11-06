@@ -117,7 +117,7 @@ local function plugins(use)
   }
   -- java
   use 'mfussenegger/nvim-jdtls'
-  -- java debug
+  -- debug
   use 'mfussenegger/nvim-dap'
   use {
     'rcarriga/nvim-dap-ui',
@@ -125,6 +125,7 @@ local function plugins(use)
       'mfussenegger/nvim-dap'
     }
   }
+  use 'theHamsta/nvim-dap-virtual-text'
   -- rust
   use {
     'simrat39/rust-tools.nvim',
