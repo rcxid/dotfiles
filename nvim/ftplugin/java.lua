@@ -100,11 +100,11 @@ local config = {
 
 -- This bundles definition is the same as in the previous section (java-debug installation)
 local bundles = {
-  vim.fn.glob("/home/vision/code/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"),
+  vim.fn.glob(data_dir .. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"),
 }
 
 -- This is the new part
-vim.list_extend(bundles, vim.split(vim.fn.glob("/home/vision/code/java/vscode-java-test/server/*.jar"), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(data_dir .. "/mason/packages/java-test/extension/server/*.jar"), "\n"))
 config['init_options'] = {
   bundles = bundles;
 }
