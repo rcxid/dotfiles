@@ -8,7 +8,6 @@ local modules = {
   'packer',
   'alpha',
   'autosave',
-  'comment',
   'snippets',
   'nvim-cmp',
   -- 'rnvimr',

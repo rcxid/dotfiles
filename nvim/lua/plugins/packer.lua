@@ -26,7 +26,6 @@ local function plugins(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'rcarriga/nvim-notify'
-  use 'numToStr/Comment.nvim'
   use 'windwp/nvim-spectre'
   use 'ethanholz/nvim-lastplace'
   -- vim首页
