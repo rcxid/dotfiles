@@ -135,7 +135,7 @@ local function plugins(use)
   }
   use {
     'saecki/crates.nvim',
-    tag = 'v0.2.1',
+    tag = 'v0.3.0',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('crates').setup()
