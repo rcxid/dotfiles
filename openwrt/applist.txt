@@ -1,0 +1,12 @@
+luci-i18n-base-zh-cn
+lsblk
+kmod-usb-storage-uas
+kmod-fs-xfs
+shadow-useradd
+luci-app-samba4
+luci-i18n-samba4-zh-cn
+luci-app-hd-idle
+luci-i18n-hd-idle-zh-cn
+luci-i18n-firewall-zh-cn
+mount-utils
+block-mount
