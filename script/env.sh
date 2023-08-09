@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$PATH:/opt/nvim/bin
+
 # tmux快捷键
 alias tls='tmux ls'
 alias tnew='tmux new -s'
