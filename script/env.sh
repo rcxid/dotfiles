@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PATH=$PATH:/opt/nvim/bin
+export PATH=$PATH:/opt/node/current/bin
 export PATH=$PATH:~/.local/bin
 
 # tmux快捷键
