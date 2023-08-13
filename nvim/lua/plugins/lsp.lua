@@ -60,6 +60,7 @@ return {
           require("lspconfig")[server_name].setup {
             settings = servers[server_name],
             on_attach = on_attach,
+            capabilities = require("cmp_nvim_lsp").default_capabilities(),
           }
         end
       }
