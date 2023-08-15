@@ -3,7 +3,7 @@ return {
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup {
-      ensure_installed = { "lua", "rust", "python" },
+      ensure_installed = { "lua", "rust", "python", "bash", "json" },
       sync_install = false,
       auto_install = true,
       ignore_install = {},

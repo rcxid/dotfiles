@@ -1,2 +1,2 @@
-require("lazy_nvim")
 require("setting")
+require("lazy_nvim")

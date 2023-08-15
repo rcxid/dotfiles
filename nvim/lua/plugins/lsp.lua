@@ -9,7 +9,11 @@ return {
     local servers = {
       rust_analyzer = {},
       pyright = {},
-      lua_ls = {},
+      lua_ls = {
+        Lua = {
+          workspace = { checkThirdParty = false },
+        },
+      },
     }
     local on_attach = function()
       -- todo
